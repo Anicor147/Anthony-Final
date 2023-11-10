@@ -10,7 +10,7 @@ namespace Enemies
 
         public float EexpDrop { get; set; }
 
-        public float EDamage { get; set; }
+        public int EDamage { get; set; }
 
         public abstract void TakeDamage(int value);
         public abstract void OnDeath();

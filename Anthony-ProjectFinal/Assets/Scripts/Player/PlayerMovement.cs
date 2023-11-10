@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] private SpriteRenderer spriteRenderer;
     private Rigidbody2D _rigidbody2D;
 
     private float horizontal;
@@ -19,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         MovePlayer();
+        FlipPlayer();
     }
 
     public void MoveInputs(InputAction.CallbackContext context)
@@ -30,6 +32,20 @@ public class PlayerMovement : MonoBehaviour
     public void MovePlayer()
     {
         _rigidbody2D.velocity = new Vector2(horizontal, vertical).normalized * speed ;
+        var magnitude = _rigidbody2D.velocity.magnitude;
+        EventManager.Instance.TriggerOnMovementEvent(magnitude);
+    }
+
+    private void FlipPlayer()
+    {
+        if (horizontal < 0)
+        {
+            spriteRenderer.flipX = true;
+        }
+        else if(horizontal > 0)
+        {
+            spriteRenderer.flipX = false;
+        }
     }
 
 }

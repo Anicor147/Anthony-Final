@@ -8,6 +8,6 @@ namespace ScriptableObjects.SOScripts
         public float MaxEHealth;
         public float Espeed;
         public float EexpDrop;
-        public float EDamage;
+        public int EDamage;
     }
 }

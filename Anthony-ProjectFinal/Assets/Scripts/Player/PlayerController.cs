@@ -7,7 +7,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-    private float _maxHealth;
+    private float _maxHealth = 100;
     private float _maxStamina;
     private float _expCap;
     private int _damage;
@@ -16,14 +16,22 @@ public class PlayerController : MonoBehaviour
     public float CurrentExp { get; set; }
     public int Damage { get; set; }
 
+    public static PlayerController Instance;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     private void Start()
     {
         CurrentHealth = _maxHealth;
         CurrenStamina = _maxStamina;
     }
     
-    public void OnDamage(float damage)
+    public void OnDamage(int value)
     {
+        EventManager.Instance.TriggerHealthChangeEvent(value);
     }
 
     private void OnDeath()
