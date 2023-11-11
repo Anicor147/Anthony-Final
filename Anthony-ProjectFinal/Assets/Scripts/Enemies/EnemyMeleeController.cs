@@ -26,7 +26,6 @@ namespace Enemies
         public override void TakeDamage(int value)
         {
             MaxEHealth -= value;
-            Debug.Log(MaxEHealth);
 
             if (MaxEHealth <= 0)
             {

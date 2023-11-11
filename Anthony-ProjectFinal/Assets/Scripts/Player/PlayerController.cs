@@ -7,11 +7,11 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-    private float _maxHealth = 100;
+    private int _maxHealth = 100;
     private float _maxStamina;
     private float _expCap;
     private int _damage;
-    public float CurrentHealth { get; set; }
+    public int CurrentHealth { get; set; }
     public float CurrenStamina{ get; set; }
     public float CurrentExp { get; set; }
     public int Damage { get; set; }
@@ -28,17 +28,8 @@ public class PlayerController : MonoBehaviour
         CurrentHealth = _maxHealth;
         CurrenStamina = _maxStamina;
     }
-    
-    public void OnDamage(int value)
-    {
-        EventManager.Instance.TriggerHealthChangeEvent(value);
-    }
 
-    private void OnDeath()
-    {
-    }
-    
-    
+
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Enemy"))
@@ -46,5 +37,14 @@ public class PlayerController : MonoBehaviour
             other.gameObject.GetComponent<EnemyBase>().TakeDamage(Damage);
         }
     }
-    
+
+    public void OnDamage(int value)
+    {
+        CurrentHealth -= value;
+        EventManager.Instance.TriggerHealthChangeEvent(CurrentHealth);
+    }
+
+    private void OnDeath()
+    {
+    }
 }

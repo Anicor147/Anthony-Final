@@ -5,7 +5,6 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private SpriteRenderer spriteRenderer;
     private Rigidbody2D _rigidbody2D;
 
     private float horizontal;
@@ -33,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
     {
         _rigidbody2D.velocity = new Vector2(horizontal, vertical).normalized * speed ;
         var magnitude = _rigidbody2D.velocity.magnitude;
+        //Sent To Event for PlayerAnimationController
         EventManager.Instance.TriggerOnMovementEvent(magnitude);
     }
 
@@ -40,11 +40,11 @@ public class PlayerMovement : MonoBehaviour
     {
         if (horizontal < 0)
         {
-            spriteRenderer.flipX = true;
+            transform.localScale = new Vector3(-1,1,1);
         }
         else if(horizontal > 0)
         {
-            spriteRenderer.flipX = false;
+            transform.localScale = new Vector3(1,1,1);
         }
     }
 
