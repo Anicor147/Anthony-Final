@@ -18,21 +18,26 @@ namespace Player
         {
             StartCoroutine(PrincipalAttackCoroutine());
             //probably will use ObjectPool
-            //Instantiate(bulletPrefab,transform.position , Quaternion.identity );
+           
         }
         
-        private static IEnumerator PrincipalAttackCoroutine()
+        private  IEnumerator PrincipalAttackCoroutine()
         {
             while (true)
             {
             EventManager.Instance.TriggerOnShootingEvent(true);
+            InstantiateBullet();
             yield return new WaitForSeconds(0.5f);
             EventManager.Instance.TriggerOnShootingEvent(false);
             yield return new WaitForSeconds(0.5f);
             }
         }
-        
-        
+
+        private void InstantiateBullet()
+        {
+            Instantiate(bulletPrefab,transform.position , Quaternion.Euler(transform.localScale.x,0,0) );
+        }
+
         public void RightMouseButtonPressed(InputAction.CallbackContext context)
         {
             if (context.started)

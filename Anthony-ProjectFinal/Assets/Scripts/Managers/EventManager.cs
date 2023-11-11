@@ -9,7 +9,8 @@ public class EventManager : MonoBehaviour
     public event Action<int> OnHealthChanged; 
     public event Action<float> OnMagnitudeChanged;
     public event Action<bool> OnShootingChanged;
-    public event Action<bool> OnThrowingChanged; 
+    public event Action<bool> OnThrowingChanged;
+    public event Action<bool> onPlayerSideChanged; 
     void Awake()
     {
         if (Instance == null)
@@ -42,4 +43,8 @@ public class EventManager : MonoBehaviour
         OnThrowingChanged?.Invoke(throwing);
     }
 
+    public void TriggerOnPlayerSideChanged(bool side)
+    {
+        onPlayerSideChanged?.Invoke(side);
+    }
 }
