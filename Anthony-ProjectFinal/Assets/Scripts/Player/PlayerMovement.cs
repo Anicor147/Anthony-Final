@@ -16,9 +16,11 @@ public class PlayerMovement : MonoBehaviour
         _rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         MovePlayer();
+        FlipPlayer();
+        localScaleCheck();
     }
 
     public void MoveInputs(InputAction.CallbackContext context)
@@ -30,6 +32,38 @@ public class PlayerMovement : MonoBehaviour
     public void MovePlayer()
     {
         _rigidbody2D.velocity = new Vector2(horizontal, vertical).normalized * speed ;
+        var magnitude = _rigidbody2D.velocity.magnitude;
+        //Sent To Event for PlayerAnimationController
+        EventManager.Instance.TriggerOnMovementEvent(magnitude);
+    }
+
+    private void FlipPlayer()
+    {
+        if (horizontal < 0)
+        {
+            //left
+            Debug.Log($"player shoulb left");
+            transform.localScale = new Vector3(-1,1,1);
+            
+        }
+        else if(horizontal > 0)
+        {
+            //right
+            transform.localScale = new Vector3(1,1,1);
+            EventManager.Instance.TriggerOnPlayerSideChanged(false);
+        }
+    }
+
+    private void localScaleCheck()
+    {
+        if (transform.localScale.x < 0)
+        {
+            EventManager.Instance.TriggerOnPlayerSideChanged(true);
+        }
+        else
+        {
+            EventManager.Instance.TriggerOnPlayerSideChanged(false);
+        }
     }
 
 }
