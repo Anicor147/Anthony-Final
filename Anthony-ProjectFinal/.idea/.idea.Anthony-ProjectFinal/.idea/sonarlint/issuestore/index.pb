@@ -25,3 +25,9 @@ W
 'Assets/Scripts/Managers/EventManager.cs,7\7\77197a43a4e699473812862e428287e30130aeb1
 b
 2Assets/Scripts/Player/PlayerAnimationController.cs,5\d\5d2d65fa5bbe20d257b12509deecaca0d31f4f3e
+Q
+!Assets/Scripts/Finals.core.asmdef,e\5\e5c7cd4a3be26d20990e98b34e2e010000d41a9b
+\
+,Assets/Scripts/Player/Bullet/BulletScript.cs,8\2\82ee97de0b40b9023366b578c8b12ea35a9c37a5
+^
+.Assets/Scripts/PostProcessing/GlobalVolumes.cs,c\0\c059cde2b233a0adc865811803f968b0cf589684
