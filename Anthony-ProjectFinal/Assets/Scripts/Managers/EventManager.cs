@@ -9,6 +9,7 @@ public class EventManager : MonoBehaviour
     public event Action<int> OnHealthChanged; 
     public event Action<float> OnMagnitudeChanged;
     public event Action<bool> OnShootingChanged;
+    public event Action<bool> OnThrowingChanged; 
     void Awake()
     {
         if (Instance == null)
@@ -34,6 +35,11 @@ public class EventManager : MonoBehaviour
     public void TriggerOnShootingEvent(bool isShooting)
     {
         OnShootingChanged?.Invoke(isShooting);
+    }
+
+    public void TriggerOnThrowingEvent(bool throwing)
+    {
+        OnThrowingChanged?.Invoke(throwing);
     }
 
 }

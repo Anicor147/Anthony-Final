@@ -56,19 +56,27 @@ public class PlayerAnimationController : MonoBehaviour
     {
         EventManager.Instance.OnMagnitudeChanged += PlayRunningAnimation;
         EventManager.Instance.OnShootingChanged += PlayShootingAnimation;
+        EventManager.Instance.OnThrowingChanged += PlayThrowingAnimation;
     }
-    
+
+    private void PlayThrowingAnimation(bool value)
+    {
+        PlayerIsThrowing(value);
+        if (!value)
+        {
+            PlayerIsThrowing(false);
+        }
+    }
+
     private void PlayRunningAnimation(float value)
     {
         if (PlayerIsRunning(value > 0.1f))
         {
             _playerIsRunningCheck = true;
-            Debug.Log($"from true : {_playerIsRunningCheck} ");
         }
         else
         {
             _playerIsRunningCheck = false;
-            Debug.Log($"from false  : {_playerIsRunningCheck} ");
         }
     }
     

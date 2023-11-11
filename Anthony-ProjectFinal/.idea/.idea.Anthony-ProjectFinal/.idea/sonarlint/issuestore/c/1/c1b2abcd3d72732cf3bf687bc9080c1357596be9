@@ -1,0 +1,9 @@
+
+Qcsharpsquid:S3903"/Move 'PlayerController' into a named namespace.(â „¦øÿÿÿÿ
+¢csharpsquid:S1186/"yAdd a nested comment explaining why this method is empty, throw a 'NotSupportedException' or complete the implementation.(¸æÀúşÿÿÿÿ8”Üİ»1
+Acsharpsquid:S2933
+"Make '_maxHealth' 'readonly'.(œÔÂì8ê±¤Û»1
+mcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(òâÍìúÿÿÿÿ8Ùè°Ø»1
+acsharpsquid:S3459"8Remove unassigned field '_maxStamina', or set its value.(à‚²Ñûÿÿÿÿ8µÏÑĞ»1
+ncsharpsquid:S2223"EChange the visibility of 'Instance' or make it 'const' or 'readonly'.(òâÍìúÿÿÿÿ8¯‚±Ø»1
+ycsharpsquid:S2696"UMake the enclosing instance method 'static' or remove this set on the 'static' field.(Ä“±Ï8ÙŒ²Ø»1
