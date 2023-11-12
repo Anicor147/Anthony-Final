@@ -4,7 +4,7 @@ using Runtime.Managers;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Runtime.Player
+namespace Runtime.Player.PlayerScripts
 {
     public class PlayerAttack : MonoBehaviour
     {
@@ -25,6 +25,7 @@ namespace Runtime.Player
             while (true)
             {
             EventManager.Instance.TriggerOnShootingEvent(true);
+            yield return new WaitForSeconds(0.1f);
             InstantiateBullet();
             yield return new WaitForSeconds(0.5f);
             EventManager.Instance.TriggerOnShootingEvent(false);

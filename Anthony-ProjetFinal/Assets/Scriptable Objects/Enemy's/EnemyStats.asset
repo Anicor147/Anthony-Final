@@ -15,4 +15,4 @@ MonoBehaviour:
   MaxEHealth: 100
   Espeed: 10
   EexpDrop: 10
-  EDamage: 10
+  EDamage: 30

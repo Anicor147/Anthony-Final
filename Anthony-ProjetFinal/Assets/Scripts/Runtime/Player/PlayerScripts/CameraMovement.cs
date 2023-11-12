@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Runtime.Player
+namespace Runtime.Player.PlayerScripts
 {
   public class CameraMovement : MonoBehaviour
   {

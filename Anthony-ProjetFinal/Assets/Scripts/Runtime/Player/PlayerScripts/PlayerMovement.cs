@@ -2,7 +2,7 @@ using Runtime.Managers;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Runtime.Player
+namespace Runtime.Player.PlayerScripts
 {
     public class PlayerMovement : MonoBehaviour
     {
@@ -43,7 +43,6 @@ namespace Runtime.Player
             if (horizontal < 0)
             {
                 //left
-                Debug.Log($"player shoulb left");
                 transform.localScale = new Vector3(-1,1,1);
             
             }

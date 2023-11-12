@@ -29,3 +29,5 @@ z
 JAssets/Scripts/Runtime/ScriptableObjects/SOScripts/PlayerStatsSOScritps.cs,4\d\4d853ec861e5b603ebb3188069f31b2a6f94c045
 ^
 .Assets/Scripts/Runtime/UI Scritps/UIScripts.cs,6\0\60a35d8f243f5276fd15bde67c9d7f2550982584
+Y
+)Assets/Scripts/Runtime/Finals.core.asmdef,b\7\b76e631be7f98039deb8d85194909e490c2986cd
