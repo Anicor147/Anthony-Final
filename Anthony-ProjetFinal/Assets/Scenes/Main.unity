@@ -252,8 +252,9 @@ GameObject:
   m_Component:
   - component: {fileID: 404022054}
   - component: {fileID: 404022053}
+  - component: {fileID: 404022055}
   m_Layer: 0
-  m_Name: grasshopper-bot1
+  m_Name: GrassHopper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -326,6 +327,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &404022055
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404022052}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 41de586989e96744d96d802066fee5b1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &555537712
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -585,6 +607,32 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cdb08229bf87aaa409795e83aebf18c3, type: 3}
+--- !u!1 &818841923 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3818272622422099165, guid: 476c55d89562b3349b8e70aa639d7e69, type: 3}
+  m_PrefabInstance: {fileID: 2071808876}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &818841929
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818841923}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e366c3bdc17f9314aadfcd432667760e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &878492480
 GameObject:
   m_ObjectHideFlags: 0
@@ -789,8 +837,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1312575727}
   - component: {fileID: 1312575726}
+  - component: {fileID: 1312575728}
   m_Layer: 0
-  m_Name: wasp1
+  m_Name: Cyber-Wasp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -863,6 +912,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1312575728
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1312575725}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8a461a2471a852942817138dd741e358, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1337789496
 GameObject:
   m_ObjectHideFlags: 0
@@ -986,7 +1056,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9d71e4de53645c4b41a96f9318b77bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  middlePointY: 0
+  middlePointY: 6
   numberOfPoints: 10
 --- !u!120 &1485960337
 LineRenderer:
@@ -1213,6 +1283,18 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5828977178087647963, guid: 476c55d89562b3349b8e70aa639d7e69, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5828977178087647963, guid: 476c55d89562b3349b8e70aa639d7e69, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5828977178087647963, guid: 476c55d89562b3349b8e70aa639d7e69, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8104232937111882591, guid: 476c55d89562b3349b8e70aa639d7e69, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.7299957
@@ -1256,7 +1338,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3818272622422099165, guid: 476c55d89562b3349b8e70aa639d7e69, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 818841929}
   m_SourcePrefab: {fileID: 100100000, guid: 476c55d89562b3349b8e70aa639d7e69, type: 3}
 --- !u!1 &2105571125
 GameObject:
