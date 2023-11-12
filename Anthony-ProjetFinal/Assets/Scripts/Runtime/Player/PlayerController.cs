@@ -37,10 +37,11 @@ namespace Runtime.Player
                 other.gameObject.GetComponent<EnemyBase>().TakeDamage(Damage);
             }
         }
-
+        
         public void OnDamage(int value)
         {
             CurrentHealth -= value;
+            Debug.Log($"CurrentHealth is {CurrentHealth}");
             EventManager.Instance.TriggerHealthChangeEvent(CurrentHealth);
         }
 

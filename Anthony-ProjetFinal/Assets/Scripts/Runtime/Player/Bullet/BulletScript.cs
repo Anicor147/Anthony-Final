@@ -37,12 +37,10 @@ namespace Runtime.Player.Bullet
         {
             if (_playerIsLeft)
             {
-                Debug.Log($"speed?");
                 _rigidbody2D.velocity = -transform.right * speed;
             }
             else if(!_playerIsLeft)
             {
-                Debug.Log(_playerIsLeft);
                 _rigidbody2D.velocity = transform.right * speed;
             }
         }

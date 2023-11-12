@@ -190,6 +190,7 @@ GameObject:
   m_Component:
   - component: {fileID: 28464898}
   - component: {fileID: 28464899}
+  - component: {fileID: 28464900}
   m_Layer: 0
   m_Name: VolumeVignette
   m_TagString: Untagged
@@ -229,6 +230,18 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   sharedProfile: {fileID: 11400000, guid: 0a1d61f685722a048a1e75d12dc2ce34, type: 2}
+--- !u!114 &28464900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 28464897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06008084369edd84295a1f137c501679, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &555537712
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -381,6 +394,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1213776803641135476, guid: cdb08229bf87aaa409795e83aebf18c3, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1213776803641135476, guid: cdb08229bf87aaa409795e83aebf18c3, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
@@ -462,6 +479,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2280568508949114724, guid: cdb08229bf87aaa409795e83aebf18c3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3424498348670603604, guid: cdb08229bf87aaa409795e83aebf18c3, type: 3}
+      propertyPath: m_Value
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9122414156277529467, guid: cdb08229bf87aaa409795e83aebf18c3, type: 3}
@@ -578,6 +599,10 @@ PrefabInstance:
       propertyPath: playerObject
       value: 
       objectReference: {fileID: 996197342}
+    - target: {fileID: 6704933448376358264, guid: e2605534ce611a84696321318554d616, type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6769327294113381458, guid: e2605534ce611a84696321318554d616, type: 3}
       propertyPath: m_Name
       value: Main Camera
