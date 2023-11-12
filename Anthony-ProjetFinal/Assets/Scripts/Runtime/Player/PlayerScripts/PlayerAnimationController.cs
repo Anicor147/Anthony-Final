@@ -1,7 +1,7 @@
 using Runtime.Managers;
 using UnityEngine;
 
-namespace Runtime.Player
+namespace Runtime.Player.PlayerScripts
 {
     public class PlayerAnimationController : MonoBehaviour
     {
