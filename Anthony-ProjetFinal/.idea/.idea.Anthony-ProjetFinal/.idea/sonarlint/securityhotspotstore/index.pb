@@ -9,18 +9,8 @@ _
 .Assets/Scripts/Runtime/Managers/GameManager.cs,c\7\c790e20be7cd28645423b1400b69864667cf5700
 d
 4Assets/Scripts/Runtime/Player/Bullet/BulletScript.cs,b\7\b7b75a1d5e628f767cadd47793a7949f59232464
-_
-/Assets/Scripts/Runtime/Player/CameraMovement.cs,c\d\cdb8ad5224ee47e6cbd312da1def75942149c5ca
-j
-:Assets/Scripts/Runtime/Player/PlayerAnimationController.cs,5\4\544054bdf14feacfbd47fa5d0cb96007d2e0fd8d
-]
--Assets/Scripts/Runtime/Player/PlayerAttack.cs,5\9\59454cecc4fbb1725867696900699b3146a12262
 f
 6Assets/Scripts/Runtime/Enemies/EnemyMeleeController.cs,5\1\51b9d42fafa5bf223140f5c9c3dc1da357447706
-a
-1Assets/Scripts/Runtime/Player/PlayerController.cs,f\f\ff4da261a791346a6a94241f2c6523efc8c770d5
-_
-/Assets/Scripts/Runtime/Player/PlayerMovement.cs,5\6\56b38ef880462c2090915644687b4c61b77b1fba
 f
 6Assets/Scripts/Runtime/PostProcessing/GlobalVolumes.cs,f\2\f2f9b3de80e4a2f6233f6a53c2222a212115d754
 y
@@ -31,3 +21,17 @@ JAssets/Scripts/Runtime/ScriptableObjects/SOScripts/PlayerStatsSOScritps.cs,4\d
 .Assets/Scripts/Runtime/UI Scritps/UIScripts.cs,6\0\60a35d8f243f5276fd15bde67c9d7f2550982584
 Y
 )Assets/Scripts/Runtime/Finals.core.asmdef,b\7\b76e631be7f98039deb8d85194909e490c2986cd
+›
+kLibrary/PackageCache/com.unity.render-pipelines.core@14.0.8/Editor/Unity.RenderPipelines.Core.Editor.asmdef,c\3\c3c03d37cfb73ec8f66ebf3749277fdea519ab01
+m
+=Assets/Scripts/Runtime/Player/PlayerScripts/CameraMovement.cs,2\f\2f707c4b4eb128ae6b6d1ef999007c3b8c244fb7
+x
+HAssets/Scripts/Runtime/Player/PlayerScripts/PlayerAnimationController.cs,1\4\14353caf7058efc7b6bf8b445c4d42c0d0b70397
+m
+=Assets/Scripts/Runtime/Player/PlayerScripts/PlayerMovement.cs,1\d\1d1c3ec4cd0a6694ee3eeed9805ebe290eabd7dd
+o
+?Assets/Scripts/Runtime/Player/PlayerScripts/PlayerController.cs,f\6\f6403fb4e6d75b5d9a09d3b25ce83a2d5cd512df
+k
+;Assets/Scripts/Runtime/Player/PlayerScripts/PlayerAttack.cs,c\0\c069e52d42463d3a197a685ff393f4426f92b7cd
+f
+6Assets/Scripts/Runtime/Player/Grenade/GrenadeScript.cs,1\8\184b143dae869ec885d18f11a1f4dacef018614e

@@ -12,6 +12,9 @@ namespace Runtime.Player.Grenade
         Vector3 initialPoint = new Vector3(0, 0, 0);
 
 
+        [Header("Bezier Parameters")]
+        [SerializeField]  private float middlePointY;
+        [SerializeField] private int numberOfPoints = 10;
         private void Start()
         {
             EventManager.Instance.OnThrowingChanged += IsThrowingCheckBool;
@@ -28,7 +31,7 @@ namespace Runtime.Player.Grenade
             }
             else
             {
-                _lineRenderer.positionCount = 0;
+                ResetLigne();
             }
         }
 
@@ -46,23 +49,20 @@ namespace Runtime.Player.Grenade
         {
             initialPoint = transform.position;
             Vector3 middlePoint = _mousePosition / 2f;
-            int numberOfPoints = 10;
-
-
+            
             _lineRenderer.positionCount = numberOfPoints;
             Vector3[] linePositions = new Vector3[numberOfPoints];
             for (int i = 0; i < numberOfPoints; i++)
             {
                 float t = i / (float)(numberOfPoints - 1); 
-                linePositions[i] = Bezier(initialPoint, new Vector3(middlePoint.x, 6f, 0), _mousePosition, t);
-                Debug.Log("Point " + i + ": " + linePositions[i] + "t :"+ t);
+                linePositions[i] = Bezier(initialPoint, new Vector3(middlePoint.x, middlePointY, 0), _mousePosition, t);
             }
             _lineRenderer.SetPositions(linePositions);
         }
 
         private void ResetLigne()
         {
-            
+            _lineRenderer.positionCount = 0;
         }
 
         private Vector3 Bezier(Vector3 p1, Vector3 p2, Vector3 p3, float t)
