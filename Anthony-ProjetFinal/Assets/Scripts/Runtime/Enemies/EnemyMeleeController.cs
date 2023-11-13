@@ -14,10 +14,7 @@ namespace Runtime.Enemies
         private void Awake()
         {
             _rigidbody2D = GetComponent<Rigidbody2D>();
-        }
-
-        private void Start()
-        {
+            
             MaxEHealth = _enemyStatsSoScritps.MaxEHealth;
             Espeed = _enemyStatsSoScritps.Espeed;
             EexpDrop = _enemyStatsSoScritps.EexpDrop;

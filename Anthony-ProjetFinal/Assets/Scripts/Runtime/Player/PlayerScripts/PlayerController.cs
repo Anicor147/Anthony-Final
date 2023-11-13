@@ -21,15 +21,11 @@ namespace Runtime.Player.PlayerScripts
         private void Awake()
         {
             Instance = this;
-        }
-
-        private void Start()
-        {
+            
             CurrentHealth = _maxHealth;
             CurrenStamina = _maxStamina;
         }
-
-
+        
         private void OnCollisionEnter2D(Collision2D other)
         {
             if (other.gameObject.CompareTag("Enemy"))

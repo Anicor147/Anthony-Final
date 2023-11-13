@@ -253,13 +253,14 @@ GameObject:
   - component: {fileID: 404022054}
   - component: {fileID: 404022053}
   - component: {fileID: 404022055}
+  - component: {fileID: 404022056}
   m_Layer: 0
   m_Name: GrassHopper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &404022053
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -348,6 +349,51 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!61 &404022056
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404022052}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.024173498, y: -0.20950228}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.5, y: 2}
+    newSize: {x: 2.5, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.69505835, y: 1.5809954}
+  m_EdgeRadius: 0
 --- !u!1001 &555537712
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -407,6 +453,22 @@ PrefabInstance:
     - target: {fileID: 4533165486922322884, guid: 050db64828bcb0345a79ac25e5b3ae11, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7422058851676338222, guid: 050db64828bcb0345a79ac25e5b3ae11, type: 3}
+      propertyPath: m_Size.x
+      value: 0.5939698
+      objectReference: {fileID: 0}
+    - target: {fileID: 7422058851676338222, guid: 050db64828bcb0345a79ac25e5b3ae11, type: 3}
+      propertyPath: m_Size.y
+      value: 1.5325658
+      objectReference: {fileID: 0}
+    - target: {fileID: 7422058851676338222, guid: 050db64828bcb0345a79ac25e5b3ae11, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.004143238
+      objectReference: {fileID: 0}
+    - target: {fileID: 7422058851676338222, guid: 050db64828bcb0345a79ac25e5b3ae11, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.0010700524
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -838,13 +900,14 @@ GameObject:
   - component: {fileID: 1312575727}
   - component: {fileID: 1312575726}
   - component: {fileID: 1312575728}
+  - component: {fileID: 1312575729}
   m_Layer: 0
   m_Name: Cyber-Wasp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1312575726
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -933,6 +996,51 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!61 &1312575729
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1312575725}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.05020702, y: -0.056461096}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3, y: 3.5}
+    newSize: {x: 3, y: 3.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.6343625, y: 2.7694411}
+  m_EdgeRadius: 0
 --- !u!1 &1337789496
 GameObject:
   m_ObjectHideFlags: 0
@@ -1282,6 +1390,22 @@ PrefabInstance:
     - target: {fileID: 5505328589745068306, guid: 476c55d89562b3349b8e70aa639d7e69, type: 3}
       propertyPath: m_Color.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5828977178087647963, guid: 476c55d89562b3349b8e70aa639d7e69, type: 3}
+      propertyPath: m_Size.x
+      value: 1.9266443
+      objectReference: {fileID: 0}
+    - target: {fileID: 5828977178087647963, guid: 476c55d89562b3349b8e70aa639d7e69, type: 3}
+      propertyPath: m_Size.y
+      value: 0.7099203
+      objectReference: {fileID: 0}
+    - target: {fileID: 5828977178087647963, guid: 476c55d89562b3349b8e70aa639d7e69, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.004028797
+      objectReference: {fileID: 0}
+    - target: {fileID: 5828977178087647963, guid: 476c55d89562b3349b8e70aa639d7e69, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.33659512
       objectReference: {fileID: 0}
     - target: {fileID: 5828977178087647963, guid: 476c55d89562b3349b8e70aa639d7e69, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.y
