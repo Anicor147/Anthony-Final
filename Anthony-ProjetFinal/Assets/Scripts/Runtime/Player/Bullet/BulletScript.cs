@@ -1,3 +1,5 @@
+using System;
+using Runtime.Enemies;
 using Runtime.Managers;
 using UnityEngine;
 
@@ -45,6 +47,22 @@ namespace Runtime.Player.Bullet
             }
         }
 
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            if (other.gameObject.CompareTag("Enemy"))
+            {
+                other.gameObject.GetComponent<EnemyBase>().TakeDamage(1);
+                DestroyBulletPrefab();
+            }
+        }
 
+        // TODO replace for Object Pooling
+        void DestroyBulletPrefab()
+        {
+            Debug.Log($"should Unsubscribe");
+            EventManager.Instance.OnPlayerSideChanged -= PlayerSideCheck ;
+            Debug.Log($"should Destroy");
+            Destroy(gameObject);
+        }
     }
 }
