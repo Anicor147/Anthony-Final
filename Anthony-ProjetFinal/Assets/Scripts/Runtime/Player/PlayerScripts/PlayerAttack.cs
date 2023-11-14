@@ -47,7 +47,6 @@ namespace Runtime.Player.PlayerScripts
             if (context.started)
             {
                 // The right mouse button is initially pressed
-                Debug.Log("Right mouse button pressed");
                 isThrowing = true;
                 StopCoroutine(PrincipalAttackCoroutine());
                 EventManager.Instance.TriggerOnThrowingEvent(true);
@@ -55,9 +54,7 @@ namespace Runtime.Player.PlayerScripts
             else if (context.canceled)
             {
                 // The right mouse button is released
-                Debug.Log("Right mouse button released");
                 isThrowing = false;
-                Debug.Log("Weird ass itch");
                 StartCoroutine(PrincipalAttackCoroutine());
                 EventManager.Instance.TriggerOnThrowingEvent(false);
             }

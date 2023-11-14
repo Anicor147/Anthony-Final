@@ -45,7 +45,12 @@ namespace Runtime.Player.Grenade
             isTrowingCheck = value;
         }
 
-        private void CourbeLine()
+        private void ThrowGrenade(Vector3[] linePoints)
+        {
+            
+        }
+
+        private Vector3[] CourbeLine()
         {
             initialPoint = transform.position;
             Vector3 middlePoint = _mousePosition / 2f;
@@ -58,6 +63,8 @@ namespace Runtime.Player.Grenade
                 linePositions[i] = Bezier(initialPoint, new Vector3(middlePoint.x, middlePointY, 0), _mousePosition, t);
             }
             _lineRenderer.SetPositions(linePositions);
+            
+            return linePositions;
         }
 
         private void ResetLigne()
