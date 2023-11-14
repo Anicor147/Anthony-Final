@@ -51,6 +51,7 @@ namespace Runtime.Player.Bullet
         {
             if (other.gameObject.CompareTag("Enemy"))
             {
+                Debug.Log("Is true");
                 other.gameObject.GetComponent<EnemyBase>().TakeDamage(1);
                 DestroyBulletPrefab();
             }

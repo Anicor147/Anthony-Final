@@ -63,7 +63,6 @@ namespace Runtime.Player.Grenade
             {
                 grenade.transform.position = point;
                 yield return new WaitForSeconds(0.05f);
-                yield return null;
             }
         }
         private Vector3[] CourbeLine()

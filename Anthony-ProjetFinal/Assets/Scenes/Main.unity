@@ -769,6 +769,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &818841935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818841923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3336bb88e4243f298c0816cf3db33fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemyStatsSoScritps: {fileID: 11400000, guid: 251f339fceaabe14fb9dc50d86045008, type: 2}
 --- !u!1 &878492480
 GameObject:
   m_ObjectHideFlags: 0
@@ -1545,6 +1558,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3818272622422099165, guid: 476c55d89562b3349b8e70aa639d7e69, type: 3}
       insertIndex: -1
       addedObject: {fileID: 818841929}
+    - targetCorrespondingSourceObject: {fileID: 3818272622422099165, guid: 476c55d89562b3349b8e70aa639d7e69, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 818841935}
   m_SourcePrefab: {fileID: 100100000, guid: 476c55d89562b3349b8e70aa639d7e69, type: 3}
 --- !u!1 &2105571125
 GameObject:
