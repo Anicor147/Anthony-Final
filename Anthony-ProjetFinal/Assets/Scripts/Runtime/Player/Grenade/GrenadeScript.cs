@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using Runtime.Managers;
 using UnityEngine;
 
@@ -6,6 +7,7 @@ namespace Runtime.Player.Grenade
 {
     public class GrenadeScript : MonoBehaviour
     {
+        [SerializeField] private GameObject grenadePrefab;
         private LineRenderer _lineRenderer;
         private Vector3 _mousePosition;
         private bool isTrowingCheck;
@@ -34,7 +36,7 @@ namespace Runtime.Player.Grenade
                 ResetLigne();
             }
         }
-
+        
         private void Awake()
         {
             _lineRenderer = GetComponent<LineRenderer>();
@@ -43,13 +45,27 @@ namespace Runtime.Player.Grenade
         private void IsThrowingCheckBool(bool value)
         {
             isTrowingCheck = value;
-        }
-
-        private void ThrowGrenade(Vector3[] linePoints)
-        {
             
+            if (!isTrowingCheck)
+            {
+                StartCoroutine(ThrowGrenade());
+            }
         }
+        
+        private IEnumerator ThrowGrenade()
+        {
+            GameObject grenade = Instantiate(grenadePrefab, transform.position, Quaternion.identity);
+            Rigidbody2D rb = grenade.GetComponent<Rigidbody2D>();
 
+            Vector3[] curvePoints = CourbeLine();
+
+            foreach (Vector3 point in curvePoints)
+            {
+                grenade.transform.position = point;
+                yield return new WaitForSeconds(0.05f);
+                yield return null;
+            }
+        }
         private Vector3[] CourbeLine()
         {
             initialPoint = transform.position;
