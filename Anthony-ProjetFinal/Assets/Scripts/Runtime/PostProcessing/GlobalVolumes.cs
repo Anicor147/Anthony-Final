@@ -24,17 +24,25 @@ namespace Runtime.PostProcessing
         
         private void Start()
         {
+            //Subscribe to Event Source PlayerController
             EventManager.Instance.OnHealthChanged += LowHealthPostProcessingEffect;
         }
         
+        //Start or Stop Coroutine, do it one time
         private void LowHealthPostProcessingEffect(int health)
         {
             if (health <= 30 && !effectStarted)
             {
                 StartCoroutine(PostProcessingCoroutine());
             }
+            else if (health > 30)
+            {
+                StopCoroutine(PostProcessingCoroutine());
+                effectStarted = false;
+            }
         }
 
+        //Lerp the intensity of vignette
         private IEnumerator PostProcessingCoroutine()
         {
             effectStarted = true;

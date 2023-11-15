@@ -14,15 +14,13 @@ namespace Runtime.Player.PlayerScripts
         private bool isCoroutineRunning = false;
         private void Start()
         {
+            //start timer
             this.StartTimer(3 ,() => StartCoroutine(PrincipalAttackCoroutine()) );
         }
         
         private  IEnumerator PrincipalAttackCoroutine()
         {
-            if (isCoroutineRunning)
-            {
-                yield break;
-            }
+            if (isCoroutineRunning) yield break;
             isCoroutineRunning = true;
             
             while (!isThrowing )

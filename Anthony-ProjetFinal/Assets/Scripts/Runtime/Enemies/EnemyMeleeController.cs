@@ -1,5 +1,6 @@
 using System;
 using Runtime.Extensions;
+using Runtime.Managers;
 using Runtime.Player;
 using Runtime.Player.PlayerScripts;
 using Runtime.ScriptableObjects.SOScripts;
@@ -37,10 +38,12 @@ namespace Runtime.Enemies
             FlipSprite();
         }
 
+        //Received Damage
         public override void TakeDamage(int value)
         {
             MaxEHealth -= value;
             _spriteRenderer.material.SetFloat("_HitValue",1);
+            //Timer extensions , set material value to 0
             this.StartTimer(0.2f , () =>_spriteRenderer.material.SetFloat("_HitValue",0));
             if (MaxEHealth <= 0)
             {
@@ -50,8 +53,10 @@ namespace Runtime.Enemies
         
         public override void OnDeath()
         {
+            GameManager.Instance._enemyList.Remove(gameObject);
             Destroy(gameObject);
         }
+        //Goes toward player
         public override void EnemyMovement()
         {
             if (isPushBack)return;
@@ -59,6 +64,7 @@ namespace Runtime.Enemies
             Vector3 x = player.transform.position - transform.position;
             _rigidbody2D.velocity = x.normalized * Espeed;
         }
+        //Flip Sprite
         public override void FlipSprite()
         {
             if (transform.position.x > player.transform.position.x)
@@ -71,6 +77,7 @@ namespace Runtime.Enemies
             }
         }
 
+        //PushBack from the player 
         private void PushBack(Collision2D other)
         {
             var pushback = transform.position - other.transform.position;
