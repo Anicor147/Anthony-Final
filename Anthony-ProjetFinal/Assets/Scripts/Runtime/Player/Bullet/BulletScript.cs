@@ -23,11 +23,9 @@ namespace Runtime.Player.Bullet
 
         private void FixedUpdate()
         {
-            if (!_eventHandled)
-            {
-                ProjectileMovement();
-                _eventHandled = true;
-            }
+            if (_eventHandled) return;
+            ProjectileMovement();
+            _eventHandled = true;
         }
 
         private void PlayerSideCheck(bool side)

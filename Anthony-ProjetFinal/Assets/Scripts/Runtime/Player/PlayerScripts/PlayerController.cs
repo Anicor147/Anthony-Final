@@ -26,14 +26,6 @@ namespace Runtime.Player.PlayerScripts
             CurrenStamina = _maxStamina;
         }
         
-        private void OnCollisionEnter2D(Collision2D other)
-        {
-            if (other.gameObject.CompareTag("Enemy"))
-            {
-                other.gameObject.GetComponent<EnemyBase>().TakeDamage(Damage);
-            }
-        }
-        
         public void OnDamage(int value)
         {
             CurrentHealth -= value;

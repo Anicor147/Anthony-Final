@@ -68,7 +68,6 @@ namespace Runtime.Player.Grenade
         private Vector3[] CourbeLine()
         {
             initialPoint = transform.position;
-           // Vector3 middlePoint = (_mousePosition  - initialPoint) / 2f;
             Vector3 middlePoint = (_mousePosition  + initialPoint) / 2f;
             
             _lineRenderer.positionCount = numberOfPoints;
