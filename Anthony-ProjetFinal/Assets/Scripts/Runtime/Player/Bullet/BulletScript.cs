@@ -51,7 +51,6 @@ namespace Runtime.Player.Bullet
         {
             if (other.gameObject.CompareTag("Enemy"))
             {
-                Debug.Log("Is true");
                 other.gameObject.GetComponent<EnemyBase>().TakeDamage(1);
                 DestroyBulletPrefab();
             }
@@ -60,9 +59,7 @@ namespace Runtime.Player.Bullet
         // TODO replace for Object Pooling
         void DestroyBulletPrefab()
         {
-            Debug.Log($"should Unsubscribe");
             EventManager.Instance.OnPlayerSideChanged -= PlayerSideCheck ;
-            Debug.Log($"should Destroy");
             Destroy(gameObject);
         }
     }

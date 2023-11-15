@@ -782,6 +782,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyStatsSoScritps: {fileID: 11400000, guid: 251f339fceaabe14fb9dc50d86045008, type: 2}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!1 &878492480
 GameObject:
   m_ObjectHideFlags: 0
@@ -1459,6 +1462,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1787352700740691796, guid: 476c55d89562b3349b8e70aa639d7e69, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1787352700740691796, guid: 476c55d89562b3349b8e70aa639d7e69, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3818272622422099165, guid: 476c55d89562b3349b8e70aa639d7e69, type: 3}
       propertyPath: m_Name
       value: Cyber-Tiger

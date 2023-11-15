@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: EnemyStats
   m_EditorClassIdentifier: 
   MaxEHealth: 100
-  Espeed: 10
+  Espeed: 5
   EexpDrop: 10
   EDamage: 30
