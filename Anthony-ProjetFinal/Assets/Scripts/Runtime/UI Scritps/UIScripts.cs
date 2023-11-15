@@ -16,6 +16,7 @@ namespace Runtime.UI_Scritps
         {
          _playerController = PlayerController.Instance;
          healthSlider.value = _playerController.CurrentHealth;
+         
          Debug.Log($"HealthBar Slider value = {healthSlider.value}");
          EventManager.Instance.OnHealthChanged += UpdateHealthBar;
         }

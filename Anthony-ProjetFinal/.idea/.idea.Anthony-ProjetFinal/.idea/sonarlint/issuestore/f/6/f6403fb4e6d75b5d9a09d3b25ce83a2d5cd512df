@@ -1,0 +1,8 @@
+
+›csharpsquid:S1186$"yAdd a nested comment explaining why this method is empty, throw a 'NotSupportedException' or complete the implementation.(¸æÀúşÿÿÿÿ
+:csharpsquid:S2933
+"Make '_maxHealth' 'readonly'.(œÔÂì
+fcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(òâÍìúÿÿÿÿ
+Zcsharpsquid:S3459"8Remove unassigned field '_maxStamina', or set its value.(à‚²Ñûÿÿÿÿ
+gcsharpsquid:S2223"EChange the visibility of 'Instance' or make it 'const' or 'readonly'.(òâÍìúÿÿÿÿ
+rcsharpsquid:S2696"UMake the enclosing instance method 'static' or remove this set on the 'static' field.(Ä“±Ï

@@ -54,11 +54,14 @@ namespace Runtime.Player.PlayerScripts
         #endregion
         private void Start()
         {
+            //Subscribe to Event - Source PlayerMovement 
             EventManager.Instance.OnMagnitudeChanged += PlayRunningAnimation;
+            //Subscribe to Event - Source PlayerAttack 
             EventManager.Instance.OnShootingChanged += PlayShootingAnimation;
             EventManager.Instance.OnThrowingChanged += PlayThrowingAnimation;
         }
 
+        //Play ThrowingAnimation
         private void PlayThrowingAnimation(bool value)
         {
             PlayerIsThrowing(value);
@@ -68,6 +71,7 @@ namespace Runtime.Player.PlayerScripts
             }
         }
 
+        //Play Running Animation
         private void PlayRunningAnimation(float value)
         {
             if (PlayerIsRunning(value > 0.1f))
@@ -79,7 +83,8 @@ namespace Runtime.Player.PlayerScripts
                 _playerIsRunningCheck = false;
             }
         }
-    
+        
+        //PlayShootingAnimation
         private void PlayShootingAnimation(bool value)
         {
             if (_playerIsRunningCheck)

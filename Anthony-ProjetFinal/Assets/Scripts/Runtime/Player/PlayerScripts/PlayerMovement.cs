@@ -1,3 +1,4 @@
+using System;
 using Runtime.Managers;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -11,6 +12,7 @@ namespace Runtime.Player.PlayerScripts
         private float horizontal;
         private float vertical;
         [SerializeField] private float speed;
+        private bool playerIsThrowing;
 
         private void Awake()
         {
@@ -30,8 +32,15 @@ namespace Runtime.Player.PlayerScripts
             vertical = context.ReadValue<Vector2>().y;
         }
 
+        private void Start()
+        {
+            //Subscribe to Event - Source PlayerAttack 
+            EventManager.Instance.OnThrowingChanged += value => playerIsThrowing = value;
+        }
+        
         public void MovePlayer()
         {
+            if (playerIsThrowing)return;
             _rigidbody2D.velocity = new Vector2(horizontal, vertical).normalized * speed ;
             var magnitude = _rigidbody2D.velocity.magnitude;
             //Sent To Event for PlayerAnimationController
