@@ -35,3 +35,5 @@ k
 ;Assets/Scripts/Runtime/Player/PlayerScripts/PlayerAttack.cs,c\0\c069e52d42463d3a197a685ff393f4426f92b7cd
 f
 6Assets/Scripts/Runtime/Player/Grenade/GrenadeScript.cs,1\8\184b143dae869ec885d18f11a1f4dacef018614e
+•
+eLibrary/PackageCache/com.unity.render-pipelines.universal@14.0.8/Shaders/2D/Sprite-Lit-Default.shader,e\c\ecb3b69080e195d3f1bf5568f161452ae64887b7

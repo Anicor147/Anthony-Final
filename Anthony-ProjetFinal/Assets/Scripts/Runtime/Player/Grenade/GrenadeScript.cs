@@ -68,14 +68,15 @@ namespace Runtime.Player.Grenade
         private Vector3[] CourbeLine()
         {
             initialPoint = transform.position;
-            Vector3 middlePoint = _mousePosition / 2f;
+           // Vector3 middlePoint = (_mousePosition  - initialPoint) / 2f;
+            Vector3 middlePoint = (_mousePosition  + initialPoint) / 2f;
             
             _lineRenderer.positionCount = numberOfPoints;
             Vector3[] linePositions = new Vector3[numberOfPoints];
             for (int i = 0; i < numberOfPoints; i++)
             {
                 float t = i / (float)(numberOfPoints - 1); 
-                linePositions[i] = Bezier(initialPoint, new Vector3(middlePoint.x, middlePointY, 0), _mousePosition, t);
+                linePositions[i] = Bezier(initialPoint, new Vector3(middlePoint.x, middlePoint.y + middlePointY, 0), _mousePosition, t);
             }
             _lineRenderer.SetPositions(linePositions);
             
