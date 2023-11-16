@@ -15,6 +15,7 @@ namespace Runtime.Managers
     {
         public static GameManager Instance { get; private set; }
         public List<GameObject> _enemyList;
+        [SerializeField] private float enemyCount;
         [SerializeField]private GameObject cyberTigerPrefab;
         private float _radius = 20;
         private bool loadedScene2 = false;
@@ -43,7 +44,7 @@ namespace Runtime.Managers
 
         void AddGameObjectOnList()
         {
-            for (int i = 0; i < 1; i++)
+            for (int i = 0; i < enemyCount; i++)
             {
                  cyberTigerPrefab = Instantiate(cyberTigerPrefab, Vector3.zero, Quaternion.identity);
                  cyberTigerPrefab.SetActive(false);

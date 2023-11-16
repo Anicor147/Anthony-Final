@@ -12,6 +12,7 @@ namespace Runtime.Player.Bullet
         [SerializeField] private float speed;
         private bool _playerIsLeft;
         private bool _eventHandled;
+        [SerializeField] private int bulletDamage;
         private void Awake()
         {
             _rigidbody2D = GetComponent<Rigidbody2D>();
@@ -52,7 +53,7 @@ namespace Runtime.Player.Bullet
         {
             if (other.gameObject.CompareTag("Enemy"))
             {
-                other.gameObject.GetComponent<EnemyBase>().TakeDamage(100);
+                other.gameObject.GetComponent<EnemyBase>().TakeDamage(bulletDamage);
                 DestroyBulletPrefab();
             }
         }

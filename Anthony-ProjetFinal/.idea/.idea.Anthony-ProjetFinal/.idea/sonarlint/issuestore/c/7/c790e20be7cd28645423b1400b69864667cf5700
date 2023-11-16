@@ -1,2 +1,3 @@
 
-›csharpsquid:S1186"yAdd a nested comment explaining why this method is empty, throw a 'NotSupportedException' or complete the implementation.(®±®“üÿÿÿÿ
+Ccsharpsquid:S2933"Make '_radius' 'readonly'.(÷°©ûÿÿÿÿ8¿™ä¥½1
+hcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(½–”í8¡©ø­½1
