@@ -1,10 +1,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Runtime.Enemies;
 using Runtime.Extensions;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 namespace Runtime.Managers
 {
@@ -14,6 +17,7 @@ namespace Runtime.Managers
         public List<GameObject> _enemyList;
         [SerializeField]private GameObject cyberTigerPrefab;
         private float _radius = 20;
+        private bool loadedScene2 = false;
         private void Awake()
         {
             if (Instance == null)
@@ -25,7 +29,6 @@ namespace Runtime.Managers
                 Destroy(gameObject);
             }
         }
-
         void Start()
         {
             _enemyList = new List<GameObject>();
@@ -35,19 +38,18 @@ namespace Runtime.Managers
 
         private void Update()
         {
-            Debug.Log(_enemyList.Count);
+            SceneTransition();
         }
 
         void AddGameObjectOnList()
         {
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < 1; i++)
             {
                  cyberTigerPrefab = Instantiate(cyberTigerPrefab, Vector3.zero, Quaternion.identity);
                  cyberTigerPrefab.SetActive(false);
                 _enemyList.Add(cyberTigerPrefab);
             }
         }
-
         private IEnumerator SpawnEnemy()
         {
             foreach (var enemy in _enemyList)
@@ -58,9 +60,26 @@ namespace Runtime.Managers
                 yield return new WaitForSeconds(0.5f);
             }
         }
-
-
-
+        
+        private void SceneTransition()
+        {
+            int sceneIndex = SceneManager.GetActiveScene().buildIndex;
+            Debug.Log(sceneIndex);
+            if (sceneIndex == 1)
+            {
+                if (_enemyList.Count == 0 && !loadedScene2)
+                {
+                    this.LoadScene("Level1" , LoadSceneMode.Additive);
+                    loadedScene2 = true;
+                }
+            }
+            else if (sceneIndex == 2 && Input.GetKeyDown(KeyCode.Space) )
+            {
+                Debug.Log($"LEVEL 1 ");
+                SceneManager.LoadScene(3, LoadSceneMode.Additive);
+                SceneManager.UnloadSceneAsync(2);
+            }
+        }
 
 
 
