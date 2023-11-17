@@ -763,6 +763,10 @@ PrefabInstance:
       value: GameManager
       objectReference: {fileID: 0}
     - target: {fileID: 2216150356302666939, guid: 713f666d156aa6949b26642d1ee03eca, type: 3}
+      propertyPath: enemyCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2216150356302666939, guid: 713f666d156aa6949b26642d1ee03eca, type: 3}
       propertyPath: cyberTigerPrefab
       value: 
       objectReference: {fileID: 3041175857801356383, guid: 722aee21616620a4f88ad72b120f38b9, type: 3}
@@ -770,6 +774,10 @@ PrefabInstance:
       propertyPath: _cyberTigerPrefab
       value: 
       objectReference: {fileID: 3818272621706661809}
+    - target: {fileID: 2216150356302666939, guid: 713f666d156aa6949b26642d1ee03eca, type: 3}
+      propertyPath: _enemyList.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -1,4 +1,5 @@
 using System;
+using log4net.Core;
 using Runtime.Extensions;
 using Runtime.Managers;
 using Runtime.Player;
@@ -53,7 +54,7 @@ namespace Runtime.Enemies
         
         public override void OnDeath()
         {
-            GameManager.Instance._enemyList.Remove(gameObject);
+            LevelManager.Instance._enemyList.Remove(gameObject);
             Destroy(gameObject);
         }
         //Goes toward player
