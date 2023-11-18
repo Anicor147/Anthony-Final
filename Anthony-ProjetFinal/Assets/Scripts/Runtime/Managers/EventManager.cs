@@ -10,7 +10,8 @@ namespace Runtime.Managers
         public event Action<float> OnMagnitudeChanged;
         public event Action<bool> OnShootingChanged;
         public event Action<bool> OnThrowingChanged;
-        public event Action<bool> OnPlayerSideChanged; 
+        public event Action<bool> OnPlayerSideChanged;
+        public event Action<Vector3> OnCharacterPostion;
         void Awake()
         {
             if (Instance == null)
@@ -21,6 +22,11 @@ namespace Runtime.Managers
             {
                 Destroy(gameObject);
             }
+        }
+
+        public void TriggerCharacterMovement(Vector3 position)
+        {
+            OnCharacterPostion?.Invoke(position);
         }
 
         public void TriggerHealthChangeEvent(int health)

@@ -13,6 +13,7 @@ namespace Runtime.Player.PlayerScripts
         private float vertical;
         [SerializeField] private float speed;
         private bool playerIsThrowing;
+        private Vector3 currentPostion;
 
         private void Awake()
         {
@@ -24,6 +25,13 @@ namespace Runtime.Player.PlayerScripts
             MovePlayer();
             FlipPlayer();
             localScaleCheck();
+        }
+
+        private void Update()
+        {
+            if (currentPostion == gameObject.transform.position) return;
+            EventManager.Instance.TriggerCharacterMovement(gameObject.transform.position);
+            currentPostion = gameObject.transform.position;
         }
 
         public void MoveInputs(InputAction.CallbackContext context)
