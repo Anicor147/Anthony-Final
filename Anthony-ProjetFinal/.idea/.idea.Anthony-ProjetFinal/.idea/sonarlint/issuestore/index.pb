@@ -39,3 +39,7 @@ f
 eLibrary/PackageCache/com.unity.render-pipelines.universal@14.0.8/Shaders/2D/Sprite-Lit-Default.shader,e\c\ecb3b69080e195d3f1bf5568f161452ae64887b7
 _
 /Assets/Scripts/Runtime/Managers/LevelManager.cs,6\d\6d6e37f9f5015ce65654cffc3955f519bef82493
+b
+2Assets/Scripts/Runtime/Managers/SceneController.cs,8\6\86d327c61953d87df01319971f01c08eae0b5fa3
+b
+2Assets/Scripts/Runtime/Managers/SceneTransition.cs,5\6\562ab57583d67793c0a6f2f4ee6cf129baf9a750

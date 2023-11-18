@@ -15,6 +15,5 @@ namespace Runtime.Managers
         {
             GameManager.LoadScene(nexScene);
         }
-
     }
 }
