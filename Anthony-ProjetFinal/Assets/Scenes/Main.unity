@@ -2232,6 +2232,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Samantha
       objectReference: {fileID: 0}
+    - target: {fileID: 7397919104796912327, guid: 4fdf58741b0b21b4590ad34132c1c9a2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2350,6 +2354,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3767023623801977474, guid: eaf29b44bd64d5743908bc4720bf1a65, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 8601783913401800358, guid: 85047f4a06a3a694fb5ab8afb6fe9a91, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

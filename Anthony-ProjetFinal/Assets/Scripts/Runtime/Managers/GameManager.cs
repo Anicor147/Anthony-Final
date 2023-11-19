@@ -45,14 +45,14 @@ namespace Runtime.Managers
             }
         }
 
-        internal static void LoadScene(string nexScene)
+        internal static void LoadScene(string nextScene)
         {
-            SceneManager.LoadScene(nexScene, LoadSceneMode.Additive);
+            SceneManager.LoadScene(nextScene, LoadSceneMode.Additive);
             if (CurrentScene != null)
             {
                 SceneManager.UnloadSceneAsync(CurrentScene);
             }
-            CurrentScene = nexScene;
+            CurrentScene = nextScene;
         }
     }
 }

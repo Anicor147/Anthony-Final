@@ -5,15 +5,15 @@ namespace Runtime.Managers
 {
     public class SceneTransition : MonoBehaviour
     {
-        [SerializeField] private string nexScene;
+        [SerializeField] private string nextScene;
         
         void Start()
-        {
-            Invoke(nameof(delays) , 5f);
+        { 
+            //Invoke(nameof(delays) , 5f);
         }
         void delays()
         {
-            GameManager.LoadScene(nexScene);
+            GameManager.LoadScene(nextScene);
         }
     }
 }
