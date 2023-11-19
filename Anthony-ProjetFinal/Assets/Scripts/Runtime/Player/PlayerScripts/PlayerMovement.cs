@@ -13,10 +13,17 @@ namespace Runtime.Player.PlayerScripts
         private float vertical;
         [SerializeField] private float speed;
         private bool playerIsThrowing;
+        private Vector3 currentPostion;
 
         private void Awake()
         {
             _rigidbody2D = GetComponent<Rigidbody2D>();
+        }
+
+        private void Start()
+        {
+            //Subscribe to Event - Source PlayerAttack 
+            EventManager.Instance.OnThrowingChanged += value => playerIsThrowing = value;
         }
 
         private void FixedUpdate()
@@ -26,18 +33,26 @@ namespace Runtime.Player.PlayerScripts
             localScaleCheck();
         }
 
+        private void Update()
+        {
+            GetPlayerPosition();
+        }
+
+        //Get Player Position + announce changes
+        private void GetPlayerPosition()
+        {
+            if (currentPostion == gameObject.transform.position) return;
+            EventManager.Instance.TriggerCharacterMovement(gameObject.transform.position);
+            currentPostion = gameObject.transform.position;
+        }
+
+
         public void MoveInputs(InputAction.CallbackContext context)
         {
             horizontal = context.ReadValue<Vector2>().x;
             vertical = context.ReadValue<Vector2>().y;
         }
 
-        private void Start()
-        {
-            //Subscribe to Event - Source PlayerAttack 
-            EventManager.Instance.OnThrowingChanged += value => playerIsThrowing = value;
-        }
-        
         public void MovePlayer()
         {
             if (playerIsThrowing)return;
@@ -53,16 +68,15 @@ namespace Runtime.Player.PlayerScripts
             {
                 //left
                 transform.localScale = new Vector3(-1,1,1);
-            
             }
             else if(horizontal > 0)
             {
                 //right
                 transform.localScale = new Vector3(1,1,1);
-                EventManager.Instance.TriggerOnPlayerSideChanged(false);
             }
         }
 
+        //Check Character side
         private void localScaleCheck()
         {
             if (transform.localScale.x < 0)

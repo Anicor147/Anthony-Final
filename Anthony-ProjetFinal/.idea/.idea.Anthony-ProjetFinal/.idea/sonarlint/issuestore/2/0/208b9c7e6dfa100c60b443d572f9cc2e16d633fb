@@ -1,0 +1,9 @@
+
+mcsharpsquid:S1104	"DMake this field 'private' and encapsulate it in a 'public' property.(øùå¡øÿÿÿÿ8×¥Ø¤¾1
+mcsharpsquid:S1104
+"DMake this field 'private' and encapsulate it in a 'public' property.(½²ð„úÿÿÿÿ8‡¼Ø¤¾1
+pcsharpsquid:S2223	"GChange the visibility of '_isPlayer1' or make it 'const' or 'readonly'.(øùå¡øÿÿÿÿ8’¼·¿¾1
+pcsharpsquid:S2223
+"GChange the visibility of '_isPlayer2' or make it 'const' or 'readonly'.(½²ð„úÿÿÿÿ8’¼·¿¾1
+~csharpsquid:S2696"UMake the enclosing instance method 'static' or remove this set on the 'static' field.(ôƒÒÎúÿÿÿÿ8’¼·¿¾1
+ycsharpsquid:S2696"UMake the enclosing instance method 'static' or remove this set on the 'static' field.(’â¥³8’¼·¿¾1

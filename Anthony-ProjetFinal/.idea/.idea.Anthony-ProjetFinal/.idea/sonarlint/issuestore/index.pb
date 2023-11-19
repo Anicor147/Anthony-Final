@@ -43,3 +43,9 @@ b
 2Assets/Scripts/Runtime/Managers/SceneController.cs,8\6\86d327c61953d87df01319971f01c08eae0b5fa3
 b
 2Assets/Scripts/Runtime/Managers/SceneTransition.cs,5\6\562ab57583d67793c0a6f2f4ee6cf129baf9a750
+^
+.Assets/Scripts/Runtime/Menu/MainMenuScripts.cs,6\7\674e5bcdecbf41dc578d63f7739f88804e283cb5
+b
+2Assets/Scripts/Runtime/Menu/SettingsMenuScripts.cs,b\0\b08668075a126e68529549d5d178baecab27fef8
+e
+5Assets/Scripts/Runtime/Menu/CharacterSelectScripts.cs,2\0\208b9c7e6dfa100c60b443d572f9cc2e16d633fb

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using Runtime.Extensions;
 using Runtime.Managers;
+using Runtime.Menu;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -53,6 +54,8 @@ namespace Runtime.Player.PlayerScripts
             }
         }
 
+        
+        
         private void InstantiateBullet()
         {
             Instantiate(bulletPrefab,transform.position , Quaternion.Euler(transform.localScale.x,0,0) );
