@@ -9,11 +9,16 @@ namespace Runtime.Menu
     {
         [SerializeField] private GameObject settingsCanvas;
         [SerializeField] private GameObject charactersCanvas;
-        
         //Open Setting
         public void OpenSetting()
         {
             settingsCanvas.SetActive(true);
+        }
+        
+        //Close Setting
+        public void CloseSetting()
+        {
+            settingsCanvas.SetActive(false);
         }
 
         //Quit Game
@@ -22,10 +27,16 @@ namespace Runtime.Menu
             Application.Quit();
         }
 
-        //OpenCharacterSelection
+        //Open CharacterSelection
         public void OpenCharacterSelectionMenu()
         {
             charactersCanvas.SetActive(true);
+        }
+        
+        //Close CharacterSelection
+        public void CloseCharacterSelectionMenu()
+        {
+            charactersCanvas.SetActive(false);
         }
     }
 }
