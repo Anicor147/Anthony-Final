@@ -31,6 +31,7 @@ namespace Runtime.Player.PlayerScripts
             CurrentHealth -= value;
             Debug.Log($"CurrentHealth is {CurrentHealth}");
             EventManager.Instance.TriggerHealthChangeEvent(CurrentHealth);
+            EventManager.Instance.TriggerOnCharacterHurt(true);
         }
 
         private void OnDeath()

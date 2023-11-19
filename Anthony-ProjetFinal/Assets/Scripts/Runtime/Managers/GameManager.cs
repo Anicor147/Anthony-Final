@@ -34,10 +34,14 @@ namespace Runtime.Managers
             if (CharacterSelectScripts._isPlayer1)
             {
                player1Object.SetActive(true);
+               player2Object.SetActive(false);
+               CharacterSelectScripts._isPlayer2 = false;
             }
             else if (CharacterSelectScripts._isPlayer2)
             {
                 player2Object.SetActive(true);
+                player1Object.SetActive(false);
+                CharacterSelectScripts._isPlayer1 = false;
             }
         }
 

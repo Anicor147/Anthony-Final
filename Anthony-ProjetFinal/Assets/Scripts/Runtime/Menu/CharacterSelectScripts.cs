@@ -21,7 +21,6 @@ namespace Runtime.Menu
         {
             _isPlayer2 = true;
             this.LoadScene("Level1", LoadSceneMode.Single);
-
         }
 
 

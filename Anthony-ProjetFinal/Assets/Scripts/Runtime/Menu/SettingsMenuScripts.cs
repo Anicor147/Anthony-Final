@@ -16,7 +16,7 @@ public class SettingsMenuScripts : MonoBehaviour
     }
 
 
-    //Open/Close player Setting Menu
+    //Open-Close player Setting Menu
     public void OpenCloseSetting( bool isPressed)
     {
         if (Input.GetKeyDown(KeyCode.Escape) && !_settingIsOpen)

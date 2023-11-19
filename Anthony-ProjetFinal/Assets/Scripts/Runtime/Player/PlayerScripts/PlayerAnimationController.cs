@@ -1,4 +1,5 @@
 using Runtime.Managers;
+using Runtime.Menu;
 using UnityEngine;
 
 namespace Runtime.Player.PlayerScripts
@@ -17,8 +18,10 @@ namespace Runtime.Player.PlayerScripts
         {
             _isRunning = Animator.StringToHash("isRunning");
             _isShooting = Animator.StringToHash("isShooting");
-            _isRunShooting = Animator.StringToHash("isRunShooting");
             _isHurt = Animator.StringToHash("isHurt");
+
+            if (!CharacterSelectScripts._isPlayer1) return;
+            _isRunShooting = Animator.StringToHash("isRunShooting");
             _isThrowing = Animator.StringToHash("isThrowing");
         }
 
@@ -33,11 +36,14 @@ namespace Runtime.Player.PlayerScripts
     
         public void PlayerIsRunShooting(bool value)
         {
+            if (CharacterSelectScripts._isPlayer2) return;
+            
             _animator.SetBool(_isRunShooting , value);
         }
 
         public void PlayerIsThrowing(bool value)
         {
+            if (CharacterSelectScripts._isPlayer2) return;
             _animator.SetBool(_isThrowing , value);
         }
 
@@ -52,6 +58,7 @@ namespace Runtime.Player.PlayerScripts
         }
 
         #endregion
+       
         private void Start()
         {
             //Subscribe to Event - Source PlayerMovement 
@@ -59,8 +66,16 @@ namespace Runtime.Player.PlayerScripts
             //Subscribe to Event - Source PlayerAttack 
             EventManager.Instance.OnShootingChanged += PlayShootingAnimation;
             EventManager.Instance.OnThrowingChanged += PlayThrowingAnimation;
+            EventManager.Instance.OnPlayerHurt += PlayerIsHurtAnimation;
         }
 
+        private void PlayerIsHurtAnimation(bool isHurt)
+        {
+            if (isHurt)
+            {
+                PlayerIsHurt();
+            }
+        }
         //Play ThrowingAnimation
         private void PlayThrowingAnimation(bool value)
         {

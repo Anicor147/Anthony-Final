@@ -11,7 +11,8 @@ namespace Runtime.Managers
         public event Action<bool> OnShootingChanged;
         public event Action<bool> OnThrowingChanged;
         public event Action<bool> OnPlayerSideChanged;
-        public event Action<Vector3> OnCharacterPostion;
+        public event Action<bool> OnPlayerHurt; 
+        public event Action<Vector3> OnCharacterPosition;
         void Awake()
         {
             if (Instance == null)
@@ -24,9 +25,14 @@ namespace Runtime.Managers
             }
         }
 
+        public void TriggerOnCharacterHurt(bool value)
+        {
+            OnPlayerHurt?.Invoke(value);
+        }
+
         public void TriggerCharacterMovement(Vector3 position)
         {
-            OnCharacterPostion?.Invoke(position);
+            OnCharacterPosition?.Invoke(position);
         }
 
         public void TriggerHealthChangeEvent(int health)

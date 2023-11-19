@@ -12,7 +12,7 @@ namespace Runtime.Player.PlayerScripts
     private void Start()
     {
       //Subscribe to Event - Source PlayerMovement
-      EventManager.Instance.OnCharacterPostion += vector3 => _playerPosition = vector3;
+      EventManager.Instance.OnCharacterPosition += vector3 => _playerPosition = vector3;
     }
 
     private void Update()
