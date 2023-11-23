@@ -37,7 +37,7 @@ namespace Runtime.Player.PlayerScripts
         public void PlayerIsRunShooting(bool value)
         {
             if (CharacterSelectScripts._isPlayer2) return;
-            
+ 
             _animator.SetBool(_isRunShooting , value);
         }
 
