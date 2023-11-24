@@ -16,7 +16,6 @@ namespace Runtime.Menu
             isPlayer2 = false;
             this.LoadScene("Level1", LoadSceneMode.Single);
         }
-
         //Choose Character2
         public void SelectPlayer2()
         {

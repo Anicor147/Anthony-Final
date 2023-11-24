@@ -26,11 +26,12 @@ public class TurretScripts : MonoBehaviour
         //Subscribe to Event - Source PlayerAttack
         EventManager.Instance.OnThrowingChanged += value => _rightIsPressed = value;
     }
-    
+
     private void Update()
     {
         _mousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
 
+        // make it only one at a time
         if (_rightIsPressed && _canPlace)
         {
             InstantiateTurret();
@@ -40,8 +41,9 @@ public class TurretScripts : MonoBehaviour
 
     private Vector3 GetCellCenter()
     {
+        // get position from world
         var cellPosition = grid.WorldToCell(_mousePosition);
-        //var cellCenter = grid.WorldToLocal(cellPosition);
+        //get center of cell
         var cellCenter = grid.GetCellCenterWorld(cellPosition);
 
         return cellCenter;
