@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Runtime.Extensions;
 using Runtime.Managers;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -13,6 +14,7 @@ public class TurretScripts : MonoBehaviour
     private Vector3 _mousePosition;
     private Camera _camera;
     private bool _rightIsPressed;
+    private bool _canPlace = true;
 
     private void Awake()
     {
@@ -28,15 +30,19 @@ public class TurretScripts : MonoBehaviour
     private void Update()
     {
         _mousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
-        
-        if(!_rightIsPressed) return;
-        InstantiateTurret();
+
+        if (_rightIsPressed && _canPlace)
+        {
+            InstantiateTurret();
+            this.StartTimer(3f, () => _canPlace = true);
+        }
     }
 
     private Vector3 GetCellCenter()
     {
         var cellPosition = grid.WorldToCell(_mousePosition);
-        var cellCenter = grid.WorldToLocal(cellPosition);
+        //var cellCenter = grid.WorldToLocal(cellPosition);
+        var cellCenter = grid.GetCellCenterWorld(cellPosition);
 
         return cellCenter;
     }
@@ -44,6 +50,7 @@ public class TurretScripts : MonoBehaviour
     private void InstantiateTurret()
     {
         var cellCenter = GetCellCenter();
+        _canPlace = false;
         Instantiate(turretPrefab, cellCenter, Quaternion.identity);
     }
 }
