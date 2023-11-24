@@ -31,17 +31,15 @@ namespace Runtime.Managers
         //Check Which Character is Selected
         private void CharactersSelection()
         {
-            if (CharacterSelectScripts._isPlayer1)
+            if (CharacterSelectScripts.isPlayer1)
             {
                player1Object.SetActive(true);
                player2Object.SetActive(false);
-               CharacterSelectScripts._isPlayer2 = false;
             }
-            else if (CharacterSelectScripts._isPlayer2)
+            else if (CharacterSelectScripts.isPlayer2)
             {
                 player2Object.SetActive(true);
                 player1Object.SetActive(false);
-                CharacterSelectScripts._isPlayer1 = false;
             }
         }
 

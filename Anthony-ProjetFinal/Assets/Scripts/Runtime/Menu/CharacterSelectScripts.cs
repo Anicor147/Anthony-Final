@@ -6,20 +6,22 @@ namespace Runtime.Menu
 {
     public class CharacterSelectScripts : MonoBehaviour
     {
-        public static  bool _isPlayer1 = false;
-        public static  bool _isPlayer2 = false;
+        public static  bool isPlayer1;
+        public static  bool isPlayer2;
         
         //Choose Character1
         public void SelectPlayer1()
         {
-            _isPlayer1 = true;
+            isPlayer1 = true;
+            isPlayer2 = false;
             this.LoadScene("Level1", LoadSceneMode.Single);
         }
 
         //Choose Character2
         public void SelectPlayer2()
         {
-            _isPlayer2 = true;
+            isPlayer2 = true;
+            isPlayer1 = false;
             this.LoadScene("Level1", LoadSceneMode.Single);
         }
 
