@@ -1,6 +1,4 @@
 
 lcsharpsquid:S2223"HChange the visibility of 'SceneToLoad' or make it 'const' or 'readonly'.(ñô¾Ü8Ø†î½1
 rcsharpsquid:S2223"IChange the visibility of 'CurrentScene' or make it 'const' or 'readonly'.(•Â”ûÿÿÿÿÿ8Òë°î½1
-~csharpsquid:S2696"UMake the enclosing instance method 'static' or remove this set on the 'static' field.(¦…¦çùÿÿÿÿ8ğ€Âî½1
-ycsharpsquid:S2696&"UMake the enclosing instance method 'static' or remove this set on the 'static' field.(ùÓ·8×óÀ¾1
-~csharpsquid:S2696,"UMake the enclosing instance method 'static' or remove this set on the 'static' field.(¯‹âÿÿÿÿÿ8²¦ŸÀ¾1
+~csharpsquid:S2696"UMake the enclosing instance method 'static' or remove this set on the 'static' field.(¦…¦çùÿÿÿÿ8ğ€Âî½1

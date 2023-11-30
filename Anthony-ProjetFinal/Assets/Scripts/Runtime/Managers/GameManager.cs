@@ -20,23 +20,24 @@ namespace Runtime.Managers
         public static GameManager Instance { get; private set; }
         internal static string SceneToLoad = "Level1";
         internal static string CurrentScene = null;
+
         private void Awake()
         {
             Instance = this;
             CharactersSelection();
             CurrentScene = SceneToLoad;
-            this.LoadScene(SceneToLoad ,LoadSceneMode.Additive);
+            this.LoadScene(SceneToLoad, LoadSceneMode.Additive);
         }
 
         //Check Which Character is Selected
         private void CharactersSelection()
         {
-            if (CharacterSelectScripts.isPlayer1)
+            if (CharacterSelectScripts.Instance.IsPlayer1)
             {
-               player1Object.SetActive(true);
-               player2Object.SetActive(false);
+                player1Object.SetActive(true);
+                player2Object.SetActive(false);
             }
-            else if (CharacterSelectScripts.isPlayer2)
+            else if (CharacterSelectScripts.Instance.IsPlayer2)
             {
                 player2Object.SetActive(true);
                 player1Object.SetActive(false);
@@ -50,6 +51,7 @@ namespace Runtime.Managers
             {
                 SceneManager.UnloadSceneAsync(CurrentScene);
             }
+
             CurrentScene = nextScene;
         }
     }

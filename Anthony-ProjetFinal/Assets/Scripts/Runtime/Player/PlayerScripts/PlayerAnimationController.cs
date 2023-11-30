@@ -20,7 +20,7 @@ namespace Runtime.Player.PlayerScripts
             _isShooting = Animator.StringToHash("isShooting");
             _isHurt = Animator.StringToHash("isHurt");
 
-            if (!CharacterSelectScripts.isPlayer1) return;
+            if (!CharacterSelectScripts.Instance.IsPlayer1) return;
             _isRunShooting = Animator.StringToHash("isRunShooting");
             _isThrowing = Animator.StringToHash("isThrowing");
         }
@@ -36,14 +36,14 @@ namespace Runtime.Player.PlayerScripts
     
         public void PlayerIsRunShooting(bool value)
         {
-            if (CharacterSelectScripts.isPlayer2) return;
+            if (CharacterSelectScripts.Instance.IsPlayer2) return;
  
             _animator.SetBool(_isRunShooting , value);
         }
 
         public void PlayerIsThrowing(bool value)
         {
-            if (CharacterSelectScripts.isPlayer2) return;
+            if (CharacterSelectScripts.Instance.IsPlayer2) return;
             _animator.SetBool(_isThrowing , value);
         }
 

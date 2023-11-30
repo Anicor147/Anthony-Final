@@ -41,7 +41,7 @@ namespace Runtime.Player.Grenade
             }
             else
             {
-                ResetLigne();
+                ResetLine();
             }
         }
         
@@ -86,7 +86,7 @@ namespace Runtime.Player.Grenade
         }
         
         //Reset Bezier Line
-        private void ResetLigne()
+        private void ResetLine()
         {
             _lineRenderer.positionCount = 0;
         }

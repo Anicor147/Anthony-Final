@@ -49,3 +49,7 @@ b
 2Assets/Scripts/Runtime/Menu/SettingsMenuScripts.cs,b\0\b08668075a126e68529549d5d178baecab27fef8
 e
 5Assets/Scripts/Runtime/Menu/CharacterSelectScripts.cs,2\0\208b9c7e6dfa100c60b443d572f9cc2e16d633fb
+e
+5Assets/Scripts/Runtime/Player/Turret/TurretScripts.cs,a\2\a20ec6887d6aacef7d171583c445727db0513a41
+g
+7Assets/Scripts/Runtime/Menu/SettingsParametersScript.cs,5\5\55ea11a77ea5e5eb906aa9fdf13bc59b4b88ad90
