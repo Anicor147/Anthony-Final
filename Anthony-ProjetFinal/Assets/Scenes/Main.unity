@@ -2484,6 +2484,10 @@ PrefabInstance:
       propertyPath: player2Object
       value: 
       objectReference: {fileID: 41105281334582821}
+    - target: {fileID: 2216150356302666939, guid: 713f666d156aa6949b26642d1ee03eca, type: 3}
+      propertyPath: playerSelectionData
+      value: 
+      objectReference: {fileID: 11400000, guid: 4f43487710a75944cabb375abd03dd32, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4416,6 +4420,10 @@ PrefabInstance:
     - target: {fileID: 480834513933738965, guid: eaf29b44bd64d5743908bc4720bf1a65, type: 3}
       propertyPath: m_Name
       value: Marth
+      objectReference: {fileID: 0}
+    - target: {fileID: 480834513933738965, guid: eaf29b44bd64d5743908bc4720bf1a65, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1858170024955705029, guid: eaf29b44bd64d5743908bc4720bf1a65, type: 3}
       propertyPath: m_LocalPosition.x
