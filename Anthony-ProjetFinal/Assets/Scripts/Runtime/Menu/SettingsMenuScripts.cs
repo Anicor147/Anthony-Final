@@ -22,7 +22,10 @@ public class SettingsMenuScripts : MonoBehaviour
 
     private void Start()
     {
-        vignetteToggle.isOn = SettingsParametersScript.Instance.VignetteCheck;
+        if (SettingsParametersScript.Instance != null)
+        {
+            vignetteToggle.isOn = SettingsParametersScript.Instance.VignetteCheck;
+        }
     }
 
     private void Update()
