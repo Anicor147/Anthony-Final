@@ -12,13 +12,14 @@ public class TurretScripts : MonoBehaviour
 {
     [SerializeField] private Grid grid;
     [SerializeField] private GameObject turretPrefab;
-    [SerializeField] private GameObject marthPosition;
+    [SerializeField] private GameObject playerPosition;
+    [SerializeField] private GameObject turretBullet;
     private Vector3 _mousePosition;
     private Camera _camera;
     private bool _rightIsPressed;
     private bool _canPlace = true;
     private int _numberOfTurret;
-  [SerializeField] private int _turretLimit;
+    [SerializeField] private int _turretLimit;
 
     public int TurretLimit
     {
@@ -67,16 +68,45 @@ public class TurretScripts : MonoBehaviour
         var instantiatedTurret = Instantiate(turretPrefab, cellCenter, Quaternion.identity);
         _numberOfTurret++;
         CheckLocalScaleOfTurret(instantiatedTurret);
+        StartCoroutine(PrincipalTurretAttackCoroutine(instantiatedTurret));
+    }
+    
+    private IEnumerator PrincipalTurretAttackCoroutine(GameObject turret)
+    {
+        var position = turret.transform.position;
+        Quaternion bulletRotation = Quaternion.identity;
+        
+        if (turret.transform.localScale.x == -1)
+        {
+            Debug.Log("should be right");
+            bulletRotation = Quaternion.Euler(0, 0, 0); 
+        }
+        else if (turret.transform.localScale.x == 1)
+        {
+            Debug.Log("should be left ");
+            bulletRotation = Quaternion.Euler(0, 180, 0); 
+        }
+
+        while (true)
+        {
+            yield return new WaitForSeconds(1f);
+            Instantiate(turretBullet, position, bulletRotation);
+            yield return new WaitForSeconds(1f);
+            Instantiate(turretBullet, position, bulletRotation);
+            TurretBulletsScript.Instance.Scale(transform);
+            yield return new WaitForSeconds(0.5f);
+        }
     }
 
+    
     //Check Local Scale
     private void CheckLocalScaleOfTurret(GameObject turret)
     {
-        if (turret.transform.position.x > marthPosition.transform.position.x)
+        if (turret.transform.position.x > playerPosition.transform.position.x)
         {
             turret.transform.localScale = new Vector3(-1, 1, 1);
         }
-        else if (turret.transform.position.x < marthPosition.transform.position.x)
+        else if (turret.transform.position.x < playerPosition.transform.position.x)
         {
             turret.transform.localScale = new Vector3(1, 1, 1);
         }

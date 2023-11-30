@@ -44,31 +44,44 @@ namespace Runtime.Managers
             this.LoadScene(SceneToLoad, LoadSceneMode.Additive);
         }
 
+        private void Start()
+        {
+           var objectx = GameObject.FindWithTag("CharacterSelect");
+           objectx.SetActive(false);
+        }
+
         //Check Which Character is Selected
         private void CharactersSelection()
         {
-            //Default
-            if (CharacterSelectScripts.Instance == null)
+            Debug.Log("Entering CharactersSelection");
+            if (CharacterSelectScripts.Instance != null)
             {
+                Debug.Log("Instance not null");
+                if (CharacterSelectScripts.Instance.IsPlayer1)
+                {
+                    Debug.Log("Should be Sam");
+                    IsPlayer1 = true;
+                    IsPlayer2 = false;
+                    player1Object.SetActive(true);
+                    player2Object.SetActive(false);
+                }
+                else if (CharacterSelectScripts.Instance.IsPlayer2)
+                {
+                    Debug.Log("Should be Mart");
+                    IsPlayer1 = false;
+                    IsPlayer2 = true;
+                    player2Object.SetActive(true);
+                    player1Object.SetActive(false);
+                }
+            }
+            else
+            {
+                // Default
+                Debug.Log("Default");
                 IsPlayer1 = true;
+                IsPlayer2 = false;
                 player1Object.SetActive(true);
                 player2Object.SetActive(false);
-                return;
-            }
-
-            if (CharacterSelectScripts.Instance.IsPlayer1)
-            {
-                Debug.Log("Should be Sam");
-                IsPlayer1 = true;
-                player1Object.SetActive(true);
-                player2Object.SetActive(false);
-            }
-            else if (CharacterSelectScripts.Instance.IsPlayer2)
-            {
-                Debug.Log("Should be Mart");
-                IsPlayer2 = true;
-                player2Object.SetActive(true);
-                player1Object.SetActive(false);
             }
         }
 

@@ -37,6 +37,7 @@ Transform:
   m_Children:
   - {fileID: 2071780378900668433}
   - {fileID: 1468701515639596295}
+  - {fileID: 5807848403352628463}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &659822154577733691
@@ -211,6 +212,55 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.74585676, y: 1.9339819}
   m_EdgeRadius: 0
+--- !u!1 &1856237895734306651
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5807848403352628463}
+  - component: {fileID: 8294904207251078186}
+  m_Layer: 10
+  m_Name: TurretSkill
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5807848403352628463
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1856237895734306651}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1858170024955705029}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8294904207251078186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1856237895734306651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8cdd835418b97141b744bdeb4d65eb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grid: {fileID: 0}
+  turretPrefab: {fileID: 4035512775045052840, guid: 2a6b46ac4ceec4b409c6b06054e11eec, type: 3}
+  playerPosition: {fileID: 480834513933738965}
+  turretBullet: {fileID: 8601783913401800358, guid: be6308e7967a1e24e9929307e6aff0e4, type: 3}
+  _turretLimit: 3
 --- !u!1 &2537205677393662510
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,7 +305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da66434efddb4101921fd081d85a4881, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 2164641017294632225, guid: cf7cd96b2af41da41b51c903e733ac1c, type: 3}
+  bulletPrefab: {fileID: 8601783913401800358, guid: 85047f4a06a3a694fb5ab8afb6fe9a91, type: 3}
 --- !u!1 &6909668460471316500
 GameObject:
   m_ObjectHideFlags: 0
