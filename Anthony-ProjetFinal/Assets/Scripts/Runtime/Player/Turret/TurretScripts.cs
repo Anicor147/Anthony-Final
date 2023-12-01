@@ -14,12 +14,13 @@ public class TurretScripts : MonoBehaviour
     [SerializeField] private GameObject turretPrefab;
     [SerializeField] private GameObject playerPosition;
     [SerializeField] private GameObject turretBullet;
+    [SerializeField] private int _turretLimit;
     private Vector3 _mousePosition;
     private Camera _camera;
     private bool _rightIsPressed;
     private bool _canPlace = true;
     private int _numberOfTurret;
-    [SerializeField] private int _turretLimit;
+    private List<GameObject> turretList;
 
     public int TurretLimit
     {
@@ -34,6 +35,7 @@ public class TurretScripts : MonoBehaviour
 
     private void Start()
     {
+        turretList = new List<GameObject>();
         //Subscribe to Event - Source PlayerAttack
         EventManager.Instance.OnThrowingChanged += value => _rightIsPressed = value;
     }
@@ -43,7 +45,7 @@ public class TurretScripts : MonoBehaviour
         _mousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
 
         // make it only one at a time
-        if (_rightIsPressed && _canPlace && TurretLimit != _numberOfTurret)
+        if (_rightIsPressed && _canPlace )
         {
             InstantiateTurret();
             this.StartTimer(3f, () => _canPlace = true);
@@ -67,32 +69,41 @@ public class TurretScripts : MonoBehaviour
         _canPlace = false;
         var instantiatedTurret = Instantiate(turretPrefab, cellCenter, Quaternion.identity);
         _numberOfTurret++;
+        turretList.Add(instantiatedTurret);
+        
+        if (_numberOfTurret > TurretLimit)
+        {
+            Destroy(turretList[0]); // Destroy the oldest turret
+            turretList.RemoveAt(0); // Remove it from the list
+        }
         CheckLocalScaleOfTurret(instantiatedTurret);
         StartCoroutine(PrincipalTurretAttackCoroutine(instantiatedTurret));
     }
     
     private IEnumerator PrincipalTurretAttackCoroutine(GameObject turret)
     {
-        var position = turret.transform.position;
+        var turretTransform = turret.transform;
+        var position = turretTransform.position;
+        
+        var bulletPosition = turretTransform.Find("BulletPosition");
         Quaternion bulletRotation = Quaternion.identity;
         
         if (turret.transform.localScale.x == -1)
         {
-            Debug.Log("should be right");
             bulletRotation = Quaternion.Euler(0, 0, 0); 
         }
         else if (turret.transform.localScale.x == 1)
         {
-            Debug.Log("should be left ");
             bulletRotation = Quaternion.Euler(0, 180, 0); 
         }
 
         while (true)
         {
+            if (turret == null && turretTransform == null) yield break; 
             yield return new WaitForSeconds(1f);
-            Instantiate(turretBullet, position, bulletRotation);
+            Instantiate(turretBullet, bulletPosition.position, bulletRotation);
             yield return new WaitForSeconds(1f);
-            Instantiate(turretBullet, position, bulletRotation);
+            Instantiate(turretBullet, bulletPosition.position, bulletRotation);
             TurretBulletsScript.Instance.Scale(transform);
             yield return new WaitForSeconds(0.5f);
         }

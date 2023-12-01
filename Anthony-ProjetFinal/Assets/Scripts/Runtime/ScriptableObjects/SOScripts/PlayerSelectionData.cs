@@ -7,11 +7,11 @@ using UnityEngine;
 public class PlayerSelectionData : ScriptableObject
 {
     public bool IsPlayer1Selected = false;
-    public bool IsPlayer2Selected = false ;
+    public bool IsPlayer2Selected = false;
 
     public void ResetValue()
     {
         IsPlayer1Selected = false;
-        IsPlayer2Selected = false ;
+        IsPlayer2Selected = false;
     }
 }

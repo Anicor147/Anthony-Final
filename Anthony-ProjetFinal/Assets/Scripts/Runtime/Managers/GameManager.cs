@@ -41,52 +41,21 @@ namespace Runtime.Managers
         {
             Instance = this;
             CharactersSelection();
-            ResetValueSO();
+            ResetValueSo();
             CurrentScene = SceneToLoad;
             this.LoadScene(SceneToLoad, LoadSceneMode.Additive);
         }
-        
-        private void ResetValueSO()
+
+        private void ResetValueSo()
         {
-                playerSelectionData.ResetValue();
+            playerSelectionData.ResetValue();
         }
 
         //Check Which Character is Selected
         private void CharactersSelection()
         {
-            /*Debug.Log("Entering CharactersSelection");
-            if (CharacterSelectScripts.Instance != null)
-            {
-                Debug.Log("Instance not null");
-                if (CharacterSelectScripts.Instance.IsPlayer1)
-                {
-                    Debug.Log("Should be Sam");
-                    IsPlayer1 = true;
-                    IsPlayer2 = false;
-                    player1Object.SetActive(true);
-                    player2Object.SetActive(false);
-                }
-                else if (CharacterSelectScripts.Instance.IsPlayer2)
-                {
-                    Debug.Log("Should be Mart");
-                    IsPlayer1 = false;
-                    IsPlayer2 = true;
-                    player2Object.SetActive(true);
-                    player1Object.SetActive(false);
-                }
-            }
-            else
-            {
-                // Default
-                Debug.Log("Default");
-                IsPlayer1 = true;
-                IsPlayer2 = false;
-                player1Object.SetActive(true);
-                player2Object.SetActive(false);
-            }*/
             if (playerSelectionData.IsPlayer1Selected)
             {
-                Debug.Log("Should be Sam");
                 IsPlayer1 = true;
                 IsPlayer2 = false;
                 player1Object.SetActive(true);
@@ -94,7 +63,6 @@ namespace Runtime.Managers
             }
             else if (playerSelectionData.IsPlayer2Selected)
             {
-                Debug.Log("Should be Mart");
                 IsPlayer1 = false;
                 IsPlayer2 = true;
                 player2Object.SetActive(true);
@@ -103,14 +71,13 @@ namespace Runtime.Managers
             else
             {
                 // Default
-                Debug.Log("Default");
                 IsPlayer1 = true;
                 IsPlayer2 = false;
                 player1Object.SetActive(true);
                 player2Object.SetActive(false);
             }
         }
-        
+
         internal static void LoadScene(string nextScene)
         {
             SceneManager.LoadScene(nextScene, LoadSceneMode.Additive);
