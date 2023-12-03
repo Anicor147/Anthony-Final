@@ -17,42 +17,76 @@ namespace Runtime.Managers
     {
         [SerializeField] private GameObject player1Object;
         [SerializeField] private GameObject player2Object;
+        [SerializeField] private PlayerSelectionData playerSelectionData;
+        private bool _isPlayer1;
+        private bool _isPlayer2;
+
+        public bool IsPlayer1
+        {
+            get => _isPlayer1;
+            set => _isPlayer1 = value;
+        }
+
+        public bool IsPlayer2
+        {
+            get => _isPlayer2;
+            set => _isPlayer2 = value;
+        }
+
         public static GameManager Instance { get; private set; }
         internal static string SceneToLoad = "Level1";
         internal static string CurrentScene = null;
+
         private void Awake()
         {
             Instance = this;
             CharactersSelection();
+            ResetValueSo();
             CurrentScene = SceneToLoad;
-            this.LoadScene(SceneToLoad ,LoadSceneMode.Additive);
+            this.LoadScene(SceneToLoad, LoadSceneMode.Additive);
+        }
+
+        private void ResetValueSo()
+        {
+            playerSelectionData.ResetValue();
         }
 
         //Check Which Character is Selected
         private void CharactersSelection()
         {
-            if (CharacterSelectScripts._isPlayer1)
+            if (playerSelectionData.IsPlayer1Selected)
             {
-               player1Object.SetActive(true);
-               player2Object.SetActive(false);
-               CharacterSelectScripts._isPlayer2 = false;
+                IsPlayer1 = true;
+                IsPlayer2 = false;
+                player1Object.SetActive(true);
+                player2Object.SetActive(false);
             }
-            else if (CharacterSelectScripts._isPlayer2)
+            else if (playerSelectionData.IsPlayer2Selected)
             {
+                IsPlayer1 = false;
+                IsPlayer2 = true;
                 player2Object.SetActive(true);
                 player1Object.SetActive(false);
-                CharacterSelectScripts._isPlayer1 = false;
+            }
+            else
+            {
+                // Default
+                IsPlayer1 = true;
+                IsPlayer2 = false;
+                player1Object.SetActive(true);
+                player2Object.SetActive(false);
             }
         }
 
-        internal static void LoadScene(string nexScene)
+        internal static void LoadScene(string nextScene)
         {
-            SceneManager.LoadScene(nexScene, LoadSceneMode.Additive);
+            SceneManager.LoadScene(nextScene, LoadSceneMode.Additive);
             if (CurrentScene != null)
             {
                 SceneManager.UnloadSceneAsync(CurrentScene);
             }
-            CurrentScene = nexScene;
+
+            CurrentScene = nextScene;
         }
     }
 }

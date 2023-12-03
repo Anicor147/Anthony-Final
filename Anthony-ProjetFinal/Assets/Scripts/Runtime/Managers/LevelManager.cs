@@ -59,7 +59,7 @@ namespace Runtime.Managers
         {
             if (_enemyList.Count <= 0 && !_loadScene)
             {
-                this.LoadScene("Level2" , LoadSceneMode.Additive);
+                GameManager.LoadScene("Level2");
                 _loadScene = true;
             }
         }

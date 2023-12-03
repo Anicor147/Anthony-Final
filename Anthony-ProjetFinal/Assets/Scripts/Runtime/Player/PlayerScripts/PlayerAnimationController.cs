@@ -7,58 +7,59 @@ namespace Runtime.Player.PlayerScripts
     public class PlayerAnimationController : MonoBehaviour
     {
         [SerializeField] private Animator _animator;
-    
+
         private int _isRunning;
         private int _isShooting;
         private int _isHurt;
         private int _isThrowing;
         private int _isRunShooting;
         private bool _playerIsRunningCheck;
+
         private void Awake()
         {
             _isRunning = Animator.StringToHash("isRunning");
             _isShooting = Animator.StringToHash("isShooting");
             _isHurt = Animator.StringToHash("isHurt");
 
-            if (!CharacterSelectScripts._isPlayer1) return;
+            if (!GameManager.Instance.IsPlayer1) return;
             _isRunShooting = Animator.StringToHash("isRunShooting");
             _isThrowing = Animator.StringToHash("isThrowing");
         }
 
         #region AnimationSetRegion
-    
+
         public bool PlayerIsRunning(bool value)
         {
-            _animator.SetBool(_isRunning , value);
+            _animator.SetBool(_isRunning, value);
 
             return value;
         }
-    
+
         public void PlayerIsRunShooting(bool value)
         {
-            if (CharacterSelectScripts._isPlayer2) return;
-            
-            _animator.SetBool(_isRunShooting , value);
+            if (GameManager.Instance.IsPlayer2) return;
+
+            _animator.SetBool(_isRunShooting, value);
         }
 
         public void PlayerIsThrowing(bool value)
         {
-            if (CharacterSelectScripts._isPlayer2) return;
-            _animator.SetBool(_isThrowing , value);
+            if (GameManager.Instance.IsPlayer2) return;
+            _animator.SetBool(_isThrowing, value);
         }
 
         public void PlayerIsShooting(bool value)
         {
-            _animator.SetBool(_isShooting , value);
+            _animator.SetBool(_isShooting, value);
         }
-    
+
         public void PlayerIsHurt()
         {
             _animator.SetTrigger(_isHurt);
         }
 
         #endregion
-       
+
         private void Start()
         {
             //Subscribe to Event - Source PlayerMovement 
@@ -76,6 +77,7 @@ namespace Runtime.Player.PlayerScripts
                 PlayerIsHurt();
             }
         }
+
         //Play ThrowingAnimation
         private void PlayThrowingAnimation(bool value)
         {
@@ -98,7 +100,7 @@ namespace Runtime.Player.PlayerScripts
                 _playerIsRunningCheck = false;
             }
         }
-        
+
         //PlayShootingAnimation
         private void PlayShootingAnimation(bool value)
         {
@@ -113,6 +115,5 @@ namespace Runtime.Player.PlayerScripts
                 PlayerIsShooting(value);
             }
         }
-
     }
 }

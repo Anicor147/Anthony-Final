@@ -21,13 +21,13 @@ namespace Runtime.PostProcessing
             _volume = GetComponent<Volume>();
             _volume.profile.TryGet(out _vignette);
         }
-        
+
         private void Start()
         {
             //Subscribe to Event Source PlayerController
             EventManager.Instance.OnHealthChanged += LowHealthPostProcessingEffect;
         }
-        
+
         //Start or Stop Coroutine, do it one time
         private void LowHealthPostProcessingEffect(int health)
         {
@@ -55,6 +55,5 @@ namespace Runtime.PostProcessing
                 yield return new WaitForSeconds(0.5f);
             }
         }
-
     }
 }

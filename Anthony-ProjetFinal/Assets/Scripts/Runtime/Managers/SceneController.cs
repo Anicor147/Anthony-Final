@@ -9,6 +9,7 @@ namespace Runtime.Managers
     {
         private void Awake()
         {
+            
             if (GameObject.FindGameObjectWithTag("Player")== null)
             {
                 GameManager.SceneToLoad = SceneManager.GetActiveScene().name;

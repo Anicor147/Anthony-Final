@@ -79,14 +79,9 @@ namespace Runtime.Player.PlayerScripts
         //Check Character side
         private void localScaleCheck()
         {
-            if (transform.localScale.x < 0)
-            {
-                EventManager.Instance.TriggerOnPlayerSideChanged(true);
-            }
-            else
-            {
-                EventManager.Instance.TriggerOnPlayerSideChanged(false);
-            }
+            bool isFacingLeft = transform.localScale.x < 0;
+            EventManager.Instance.TriggerOnPlayerSideChanged(isFacingLeft);
+            
         }
 
     }

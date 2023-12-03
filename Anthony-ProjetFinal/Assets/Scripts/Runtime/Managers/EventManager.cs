@@ -29,12 +29,11 @@ namespace Runtime.Managers
         {
             OnPlayerHurt?.Invoke(value);
         }
-
+        
         public void TriggerCharacterMovement(Vector3 position)
         {
             OnCharacterPosition?.Invoke(position);
         }
-
         public void TriggerHealthChangeEvent(int health)
         {
             OnHealthChanged?.Invoke(health);

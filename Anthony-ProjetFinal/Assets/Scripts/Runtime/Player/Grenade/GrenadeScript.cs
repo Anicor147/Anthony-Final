@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using Runtime.Managers;
 using UnityEngine;
@@ -12,6 +11,7 @@ namespace Runtime.Player.Grenade
         private Vector3 _mousePosition;
         private bool isTrowingCheck;
         private Vector3 initialPoint;
+        private Camera _camera;
 
 
         [Header("Bezier Parameters")]
@@ -25,13 +25,14 @@ namespace Runtime.Player.Grenade
 
         private void Start()
         {
+            _camera = Camera.main;
             //Subscribe to Event - Source PlayerAttack
             EventManager.Instance.OnThrowingChanged += IsThrowingCheckBool;
         }
 
         private void Update()
         {
-            _mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            _mousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
             _mousePosition.z = 0;
             
             if (isTrowingCheck)
@@ -40,7 +41,7 @@ namespace Runtime.Player.Grenade
             }
             else
             {
-                ResetLigne();
+                ResetLine();
             }
         }
         
@@ -85,7 +86,7 @@ namespace Runtime.Player.Grenade
         }
         
         //Reset Bezier Line
-        private void ResetLigne()
+        private void ResetLine()
         {
             _lineRenderer.positionCount = 0;
         }
