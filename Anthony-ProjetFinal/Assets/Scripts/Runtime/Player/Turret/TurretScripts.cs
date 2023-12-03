@@ -15,6 +15,7 @@ public class TurretScripts : MonoBehaviour
     [SerializeField] private GameObject playerPosition;
     [SerializeField] private GameObject turretBullet;
     [SerializeField] private int _turretLimit;
+    [SerializeField] private GameObject turretBulletPool;
     private Vector3 _mousePosition;
     private Camera _camera;
     private bool _rightIsPressed;
@@ -101,9 +102,9 @@ public class TurretScripts : MonoBehaviour
         {
             if (turret == null && turretTransform == null) yield break; 
             yield return new WaitForSeconds(1f);
-            Instantiate(turretBullet, bulletPosition.position, bulletRotation);
+            Instantiate(turretBullet, bulletPosition.position, bulletRotation , turretBulletPool.transform );
             yield return new WaitForSeconds(1f);
-            Instantiate(turretBullet, bulletPosition.position, bulletRotation);
+            Instantiate(turretBullet, bulletPosition.position, bulletRotation , turretBulletPool.transform);
             TurretBulletsScript.Instance.Scale(transform);
             yield return new WaitForSeconds(0.5f);
         }

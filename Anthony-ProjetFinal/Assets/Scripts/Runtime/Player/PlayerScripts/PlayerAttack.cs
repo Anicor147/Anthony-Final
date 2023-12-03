@@ -11,6 +11,7 @@ namespace Runtime.Player.PlayerScripts
     public class PlayerAttack : MonoBehaviour
     {
         [SerializeField] private GameObject bulletPrefab;
+        [SerializeField] private BulletPool bulletPool;
         private bool isThrowing = false;
         private bool isCoroutineRunning = false;
         private void Start()
@@ -28,7 +29,10 @@ namespace Runtime.Player.PlayerScripts
             {
             EventManager.Instance.TriggerOnShootingEvent(true);
             yield return new WaitForSeconds(0.1f);
-            InstantiateBullet();
+            var bullet = bulletPool.GetObject();
+            bullet.transform.SetPositionAndRotation(transform.position , Quaternion.identity);
+            bullet.gameObject.SetActive(true);
+            //InstantiateBullet();
             yield return new WaitForSeconds(0.5f);
             EventManager.Instance.TriggerOnShootingEvent(false);
             yield return new WaitForSeconds(0.5f);
