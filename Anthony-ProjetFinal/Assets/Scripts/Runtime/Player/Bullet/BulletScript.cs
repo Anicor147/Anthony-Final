@@ -7,22 +7,30 @@ namespace Runtime.Player.Bullet
 {
     public class BulletScript : MonoBehaviour
     {
+        [SerializeField] private int bulletDamage;
+        [SerializeField] private float speed;
         private Rigidbody2D _rigidbody2D;
         private SpriteRenderer _spriteRenderer;
-        [SerializeField] private float speed;
         private bool _playerIsLeft;
         private bool _eventHandled;
-        [SerializeField] private int bulletDamage;
+        private float _timeToLive = 0.1f;
+
         private void Awake()
         {
             _rigidbody2D = GetComponent<Rigidbody2D>();
             _spriteRenderer = GetComponent<SpriteRenderer>();
         }
-    
+
         private void Start()
         {
             //Subscribe to Event - Source PlayerMovement 
-            EventManager.Instance.OnPlayerSideChanged += value => _playerIsLeft = value ;
+            // EventManager.Instance.OnPlayerSideChanged += value => _playerIsLeft = value ;
+        }
+
+        private void OnEnable()
+        {
+            EventManager.Instance.OnPlayerSideChanged += value => _playerIsLeft = value;
+            Debug.Log("Should be subcribed again");
         }
 
         private void FixedUpdate()
@@ -32,7 +40,16 @@ namespace Runtime.Player.Bullet
             ProjectileMovement();
             _eventHandled = true;
         }
-        
+
+        private void Update()
+        {
+            _timeToLive -= Time.deltaTime;
+            if (_timeToLive <= 0)
+            {
+                Reset();
+            }
+        }
+
         //Send Bullet to right or left
         public void ProjectileMovement()
         {
@@ -41,7 +58,7 @@ namespace Runtime.Player.Bullet
                 _spriteRenderer.flipX = true;
                 _rigidbody2D.velocity = -transform.right * speed;
             }
-            else if(!_playerIsLeft)
+            else if (!_playerIsLeft)
             {
                 _rigidbody2D.velocity = transform.right * speed;
                 _spriteRenderer.flipX = false;
@@ -54,16 +71,17 @@ namespace Runtime.Player.Bullet
             if (other.gameObject.CompareTag("Enemy"))
             {
                 other.gameObject.GetComponent<EnemyBase>().TakeDamage(bulletDamage);
-                DestroyBulletPrefab();
+                Reset();
             }
         }
 
-        // TODO replace for Object Pooling
-        void DestroyBulletPrefab()
+        public void Reset()
         {
             //Unsubscribe before destroy
-            EventManager.Instance.OnPlayerSideChanged -= value => _playerIsLeft = value ;
-            Destroy(gameObject);
+            EventManager.Instance.OnPlayerSideChanged -= value => _playerIsLeft = value;
+            _eventHandled = false;
+            _timeToLive = 5f;
+            gameObject.SetActive(false);
         }
     }
 }

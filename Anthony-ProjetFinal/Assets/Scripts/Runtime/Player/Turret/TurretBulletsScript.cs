@@ -11,12 +11,22 @@ public class TurretBulletsScript : MonoBehaviour
     [SerializeField] private int bulletDamage;
     [SerializeField] private GameObject turretScale;
     private bool side;
+    private float _timeToLive = 1f;
     public static TurretBulletsScript Instance { get; private set; }
-    
+
     private void Awake()
     {
         Instance = this;
         _rigidbody2D = GetComponent<Rigidbody2D>();
+    }
+
+    private void Update()
+    {
+        _timeToLive -= Time.deltaTime;
+        if (_timeToLive <= 0)
+        {
+            DestroyBulletPrefab();
+        }
     }
 
     private void FixedUpdate()
@@ -39,7 +49,8 @@ public class TurretBulletsScript : MonoBehaviour
     public bool Scale(Transform scale)
     {
         if (scale.localScale.x == -1)
-        {Debug.Log("should be right");
+        {
+            Debug.Log("should be right");
             side = true;
             return side;
         }
@@ -47,7 +58,7 @@ public class TurretBulletsScript : MonoBehaviour
         {
             Debug.Log("should be left ");
             side = false;
-            return side;    
+            return side;
         }
 
         return side;

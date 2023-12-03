@@ -14,9 +14,10 @@ namespace Runtime.Player.Grenade
         private Camera _camera;
 
 
-        [Header("Bezier Parameters")]
-        [SerializeField]  private float middlePointY;
-        [SerializeField] private int numberOfPoints = 10;
+        [Header("Bezier Parameters")] [SerializeField]
+        private float middlePointY;
+
+        [SerializeField] private int numberOfPoints = 100;
 
         private void Awake()
         {
@@ -34,7 +35,7 @@ namespace Runtime.Player.Grenade
         {
             _mousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
             _mousePosition.z = 0;
-            
+
             if (isTrowingCheck)
             {
                 CourbeLine();
@@ -44,7 +45,7 @@ namespace Runtime.Player.Grenade
                 ResetLine();
             }
         }
-        
+
         //Receive value from Event
         private void IsThrowingCheckBool(bool value)
         {
@@ -54,11 +55,13 @@ namespace Runtime.Player.Grenade
                 StartCoroutine(ThrowGrenade());
             }
         }
-        
+
         //Make grenade follow bezier line
         private IEnumerator ThrowGrenade()
         {
             GameObject grenade = Instantiate(grenadePrefab, transform.position, Quaternion.identity);
+            var collider = grenade.GetComponent<BoxCollider2D>();
+            collider.enabled = false;
             Vector3[] curvePoints = CourbeLine();
 
             foreach (Vector3 point in curvePoints)
@@ -66,25 +69,30 @@ namespace Runtime.Player.Grenade
                 grenade.transform.position = point;
                 yield return new WaitForSeconds(0.05f);
             }
+
+            collider.enabled = true;
         }
+
         //Bezier Line
         private Vector3[] CourbeLine()
         {
             initialPoint = transform.position;
-            Vector3 middlePoint = (_mousePosition  + initialPoint) / 2f;
-            
+            Vector3 middlePoint = (_mousePosition + initialPoint) / 2f;
+
             _lineRenderer.positionCount = numberOfPoints;
             Vector3[] linePositions = new Vector3[numberOfPoints];
             for (int i = 0; i < numberOfPoints; i++)
             {
-                float t = i / (float)(numberOfPoints - 1); 
-                linePositions[i] = Bezier(initialPoint, new Vector3(middlePoint.x, middlePoint.y + middlePointY, 0), _mousePosition, t);
+                float t = i / (float)(numberOfPoints - 1);
+                linePositions[i] = Bezier(initialPoint, new Vector3(middlePoint.x, middlePoint.y + middlePointY, 0),
+                    _mousePosition, t);
             }
+
             _lineRenderer.SetPositions(linePositions);
-            
+
             return linePositions;
         }
-        
+
         //Reset Bezier Line
         private void ResetLine()
         {
