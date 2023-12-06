@@ -5069,6 +5069,10 @@ PrefabInstance:
       propertyPath: grenadePrefab
       value: 
       objectReference: {fileID: 6747336670962009713, guid: c35f71bdd1cf1964bb7d742efde6897b, type: 3}
+    - target: {fileID: 7068685527771090875, guid: 4fdf58741b0b21b4590ad34132c1c9a2, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 7397919104796912327, guid: 4fdf58741b0b21b4590ad34132c1c9a2, type: 3}
       propertyPath: m_Name
       value: Samantha
@@ -5217,6 +5221,10 @@ PrefabInstance:
       propertyPath: bulletPool
       value: 
       objectReference: {fileID: 289528659}
+    - target: {fileID: 6913619300366408613, guid: eaf29b44bd64d5743908bc4720bf1a65, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 8294904207251078186, guid: eaf29b44bd64d5743908bc4720bf1a65, type: 3}
       propertyPath: grid
       value: 

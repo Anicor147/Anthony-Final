@@ -63,3 +63,5 @@ b
 2Assets/Scripts/Runtime/Player/Bullet/BulletPool.cs,4\3\437d5528b0bbf1252a8cb2c0f13d84e190ee6e57
 |
 LLibrary/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Runtime/TMP_Text.cs,e\a\eaa74457ca72efd0af0861a630ffa793cb0ebe12
+f
+6Assets/Scripts/Runtime/Player/HologrammeShaderSpeed.cs,c\c\cc1fb000a1728ddc82470453dd3eb7a9372c8e54

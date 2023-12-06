@@ -21,16 +21,9 @@ namespace Runtime.Player.Bullet
             _spriteRenderer = GetComponent<SpriteRenderer>();
         }
 
-        private void Start()
-        {
-            //Subscribe to Event - Source PlayerMovement 
-            // EventManager.Instance.OnPlayerSideChanged += value => _playerIsLeft = value ;
-        }
-
         private void OnEnable()
         {
             EventManager.Instance.OnPlayerSideChanged += value => _playerIsLeft = value;
-            Debug.Log("Should be subcribed again");
         }
 
         private void FixedUpdate()
@@ -51,7 +44,7 @@ namespace Runtime.Player.Bullet
         }
 
         //Send Bullet to right or left
-        public void ProjectileMovement()
+        private void ProjectileMovement()
         {
             if (_playerIsLeft)
             {
