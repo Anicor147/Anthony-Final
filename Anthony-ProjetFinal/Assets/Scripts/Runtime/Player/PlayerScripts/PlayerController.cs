@@ -11,10 +11,13 @@ namespace Runtime.Player.PlayerScripts
         private float _maxStamina;
         private float _expCap;
         private int _damage;
+        private int _moneyCount;
+        
         public int CurrentHealth { get; set; }
         public float CurrenStamina{ get; set; }
         public float CurrentExp { get; set; }
         public int Damage { get; set; }
+        public int MoneyCount { get; set; }
 
         public static PlayerController Instance;
 
@@ -34,8 +37,15 @@ namespace Runtime.Player.PlayerScripts
             EventManager.Instance.TriggerOnCharacterHurt(true);
         }
 
+        public void IncreaseMoney( int value)
+        {
+            _moneyCount += value;
+            EventManager.Instance.TriggerOnMoneyChanged(_moneyCount);
+        }
+
         private void OnDeath()
         {
+            // Send Event Dead to UIController
         }
     }
 }

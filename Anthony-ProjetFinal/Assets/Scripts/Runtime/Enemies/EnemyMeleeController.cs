@@ -17,6 +17,7 @@ namespace Runtime.Enemies
         private Rigidbody2D _rigidbody2D;
         private GameObject player;
         private bool isPushBack;
+        [FormerlySerializedAs("_loot")] [SerializeField] private LootManager loot;
         private void Awake()
         {
             _rigidbody2D = GetComponent<Rigidbody2D>();
@@ -55,6 +56,7 @@ namespace Runtime.Enemies
         public override void OnDeath()
         {
             LevelManager.Instance._enemyList.Remove(gameObject);
+            loot.MoneyLoot(transform.position);
             Destroy(gameObject);
         }
         //Goes toward player

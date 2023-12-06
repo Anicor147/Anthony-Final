@@ -7,6 +7,7 @@ namespace Runtime.Managers
     {
         public static EventManager Instance { get; private set; }
         public event Action<int> OnHealthChanged; 
+        public event Action<int> OnMoneyChanged; 
         public event Action<float> OnMagnitudeChanged;
         public event Action<bool> OnShootingChanged;
         public event Action<bool> OnThrowingChanged;
@@ -25,6 +26,10 @@ namespace Runtime.Managers
             }
         }
 
+        public void TriggerOnMoneyChanged(int value)
+        {
+            OnMoneyChanged?.Invoke(value);
+        }
         public void TriggerOnCharacterHurt(bool value)
         {
             OnPlayerHurt?.Invoke(value);
