@@ -26,6 +26,11 @@ namespace Runtime.Player.PlayerScripts
             EventManager.Instance.OnThrowingChanged += value => playerIsThrowing = value;
         }
 
+        private void OnDisable()
+        {
+            EventManager.Instance.OnThrowingChanged -= value => playerIsThrowing = value;
+        }
+
         private void FixedUpdate()
         {
             MovePlayer();

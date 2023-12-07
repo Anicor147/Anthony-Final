@@ -14,6 +14,7 @@ namespace Runtime.Managers
         public event Action<bool> OnPlayerSideChanged;
         public event Action<bool> OnPlayerHurt; 
         public event Action<Vector3> OnCharacterPosition;
+        public event Action<bool> OnPlayerDead; 
         void Awake()
         {
             if (Instance == null)
@@ -26,6 +27,10 @@ namespace Runtime.Managers
             }
         }
 
+        public void TriggerOnPlayerDead(bool value)
+        {
+            OnPlayerDead?.Invoke(value);
+        }
         public void TriggerOnMoneyChanged(int value)
         {
             OnMoneyChanged?.Invoke(value);

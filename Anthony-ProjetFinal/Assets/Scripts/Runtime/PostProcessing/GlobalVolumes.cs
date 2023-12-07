@@ -28,6 +28,11 @@ namespace Runtime.PostProcessing
             EventManager.Instance.OnHealthChanged += LowHealthPostProcessingEffect;
         }
 
+        private void OnDisable()
+        {
+            EventManager.Instance.OnHealthChanged -= LowHealthPostProcessingEffect;
+        }
+
         //Start or Stop Coroutine, do it one time
         private void LowHealthPostProcessingEffect(int health)
         {

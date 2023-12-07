@@ -65,3 +65,7 @@ b
 LLibrary/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Runtime/TMP_Text.cs,e\a\eaa74457ca72efd0af0861a630ffa793cb0ebe12
 f
 6Assets/Scripts/Runtime/Player/HologrammeShaderSpeed.cs,c\c\cc1fb000a1728ddc82470453dd3eb7a9372c8e54
+^
+.Assets/Scripts/Runtime/Managers/LootManager.cs,7\c\7c64a2ff51061f445bfcd20e0cbe22b1c2babe38
+[
++Assets/Scripts/Runtime/Items/MoneyScript.cs,1\0\10c40a43492e90498b5197433e9099e6c749d812

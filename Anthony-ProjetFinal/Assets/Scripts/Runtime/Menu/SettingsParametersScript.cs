@@ -6,25 +6,30 @@ using UnityEngine.UI;
 
 public class SettingsParametersScript : MonoBehaviour
 {
-    [SerializeField] private Toggle _toggle;
-    public static SettingsParametersScript Instance { get; private set; }
+    [SerializeField] private Toggle _vignetteToggle;
+    [SerializeField] private Toggle _filmGrainToggle;
+    [SerializeField] private PlayerSelectionData _playerSelectionData;
 
     private bool _vignetteCheck;
-    public bool VignetteCheck { get; set; }
-
-
-    private void Awake()
-    {
-        Instance = this;
-    }
+    private bool _filmGrainCheck;
 
     private void Start()
     {
-        VignetteCheck = true;
+        _playerSelectionData.ResetSettings();
+        _vignetteCheck = true;
+        _playerSelectionData.VignetteIsActivated = _vignetteCheck;
     }
 
-    public void VignetteValue()
+    public void VignetteSetValue()
     {
-        VignetteCheck = _toggle.isOn;
+        _vignetteCheck = _vignetteToggle.isOn;
+        _playerSelectionData.VignetteIsActivated = _vignetteCheck;
     }
+
+    public void FilmGrainSetValue()
+    {
+        _filmGrainCheck = _filmGrainToggle.isOn;
+        _playerSelectionData.FilmGrainIsActivated = _filmGrainCheck;
+    }
+
 }

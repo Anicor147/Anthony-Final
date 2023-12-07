@@ -26,6 +26,11 @@ namespace Runtime.Player.Bullet
             EventManager.Instance.OnPlayerSideChanged += value => _playerIsLeft = value;
         }
 
+        private void OnDisable()
+        {
+            EventManager.Instance.OnPlayerSideChanged -= value => _playerIsLeft = value;
+        }
+
         private void FixedUpdate()
         {
             // Projectile Movement only called once
@@ -71,7 +76,6 @@ namespace Runtime.Player.Bullet
         public void Reset()
         {
             //Unsubscribe before destroy
-            EventManager.Instance.OnPlayerSideChanged -= value => _playerIsLeft = value;
             _eventHandled = false;
             _timeToLive = 5f;
             gameObject.SetActive(false);

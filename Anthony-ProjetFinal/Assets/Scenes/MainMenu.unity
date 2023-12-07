@@ -1507,7 +1507,7 @@ GameObject:
   - component: {fileID: 486864510}
   - component: {fileID: 486864511}
   m_Layer: 5
-  m_Name: Toggle Bloom?
+  m_Name: Toggle FilmGrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1583,7 +1583,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1674988452}
         m_TargetAssemblyTypeName: SettingsParametersScript, Finals.core
-        m_MethodName: VignetteValue
+        m_MethodName: FilmGrainSetValue
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1803,7 +1803,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c4e2ac3ecc31f8478128f92a6796932, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _toggle: {fileID: 1678397431}
+  _vignetteToggle: {fileID: 0}
+  _filmGrainToggle: {fileID: 0}
+  _playerSelectionData: {fileID: 11400000, guid: 4f43487710a75944cabb375abd03dd32, type: 2}
 --- !u!1 &578253398
 GameObject:
   m_ObjectHideFlags: 0
@@ -3687,7 +3689,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Bloom ?
+  m_text: Film Grain
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d9c997d6e1de30343a95bb023db450c4, type: 2}
   m_sharedMaterial: {fileID: -861410980317349815, guid: d9c997d6e1de30343a95bb023db450c4, type: 2}
@@ -4439,7 +4441,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c4e2ac3ecc31f8478128f92a6796932, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _toggle: {fileID: 1678397431}
+  _vignetteToggle: {fileID: 1678397431}
+  _filmGrainToggle: {fileID: 486864511}
+  _playerSelectionData: {fileID: 11400000, guid: 4f43487710a75944cabb375abd03dd32, type: 2}
 --- !u!1 &1678397429
 GameObject:
   m_ObjectHideFlags: 0
@@ -4527,7 +4531,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1674988452}
         m_TargetAssemblyTypeName: SettingsParametersScript, Finals.core
-        m_MethodName: VignetteValue
+        m_MethodName: VignetteSetValue
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
