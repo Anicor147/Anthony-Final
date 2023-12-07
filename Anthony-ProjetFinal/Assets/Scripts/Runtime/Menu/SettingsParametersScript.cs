@@ -17,7 +17,9 @@ public class SettingsParametersScript : MonoBehaviour
     {
         _playerSelectionData.ResetSettings();
         _vignetteCheck = true;
+        _filmGrainCheck = true;
         _playerSelectionData.VignetteIsActivated = _vignetteCheck;
+        _playerSelectionData.FilmGrainIsActivated = _filmGrainCheck;
     }
 
     public void VignetteSetValue()

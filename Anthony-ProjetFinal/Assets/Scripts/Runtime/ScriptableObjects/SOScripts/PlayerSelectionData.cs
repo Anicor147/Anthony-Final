@@ -6,12 +6,13 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "PlayerSelectionData", menuName = "SO/PlayerSelectionData", order = 3)]
 public class PlayerSelectionData : ScriptableObject
 {
-    private bool isPlayer1Selected = false;
-    private bool isPlayer2Selected = false;
-    private bool vignetteIsActivated = false;
-    private bool filmGrainIsActivated = false;
+    private bool isPlayer1Selected;
+   private bool isPlayer2Selected;
+    private bool vignetteIsActivated = true;
+    private bool filmGrainIsActivated =true;
 
-
+   private void OnEnable() => hideFlags = HideFlags.DontUnloadUnusedAsset;
+    
     public bool IsPlayer1Selected
     {
         get => isPlayer1Selected;
