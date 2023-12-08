@@ -1,5 +1,6 @@
 
 Ocsharpsquid:S3903"2Move 'PlayerSelectionData' into a named namespace.(™›¨Ñ
-fcsharpsquid:S1104	"DMake this field 'private' and encapsulate it in a 'public' property.(ïÃòãüÿÿÿÿ
-acsharpsquid:S1104
-"DMake this field 'private' and encapsulate it in a 'public' property.(é·İ§
+gcsharpsquid:S2292"DMake this an auto-implemented property and remove its backing field.(Ñ˜ñ[8Æ‡Î²Ä1
+mcsharpsquid:S2292"DMake this an auto-implemented property and remove its backing field.(Ëœèøÿÿÿÿ8Æ‡Î²Ä1
+mcsharpsquid:S2292"DMake this an auto-implemented property and remove its backing field.(Üæ÷˜øÿÿÿÿ8Æ‡Î²Ä1
+hcsharpsquid:S2292""DMake this an auto-implemented property and remove its backing field.(âşì®8Æ‡Î²Ä1

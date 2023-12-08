@@ -1923,7 +1923,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 557413988}
         m_TargetAssemblyTypeName: SettingsParametersScript, Finals.core
         m_MethodName: FilmGrainSetValue
         m_Mode: 1
@@ -5406,7 +5406,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 557413988}
         m_TargetAssemblyTypeName: SettingsParametersScript, Finals.core
         m_MethodName: VignetteSetValue
         m_Mode: 1

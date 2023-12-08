@@ -30,6 +30,7 @@ namespace Runtime.PostProcessing
 
         private void OnDisable()
         {
+            //Unsubcribe to event 
             EventManager.Instance.OnHealthChanged -= LowHealthPostProcessingEffect;
         }
 

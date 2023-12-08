@@ -17,8 +17,6 @@ y
 IAssets/Scripts/Runtime/ScriptableObjects/SOScripts/EnemyStatsSOScritps.cs,c\0\c00a9b3d82aa8fd0cc9eac18bc158b339a5ea6b8
 z
 JAssets/Scripts/Runtime/ScriptableObjects/SOScripts/PlayerStatsSOScritps.cs,4\d\4d853ec861e5b603ebb3188069f31b2a6f94c045
-^
-.Assets/Scripts/Runtime/UI Scritps/UIScripts.cs,6\0\60a35d8f243f5276fd15bde67c9d7f2550982584
 Y
 )Assets/Scripts/Runtime/Finals.core.asmdef,b\7\b76e631be7f98039deb8d85194909e490c2986cd
 ›
@@ -69,3 +67,5 @@ f
 .Assets/Scripts/Runtime/Managers/LootManager.cs,7\c\7c64a2ff51061f445bfcd20e0cbe22b1c2babe38
 [
 +Assets/Scripts/Runtime/Items/MoneyScript.cs,1\0\10c40a43492e90498b5197433e9099e6c749d812
+c
+3Assets/Scripts/Runtime/Menu/LevelSelectionScript.cs,4\4\44ec75e691cc407686c7ed586e0376338db92438

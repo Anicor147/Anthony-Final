@@ -27,8 +27,8 @@ public class SettingsMenuScripts : MonoBehaviour
 
     private void Start()
     {
-        //vignetteToggle.isOn = _playerSelectionData.VignetteIsActivated;
-        //filmGrainToggle.isOn = _playerSelectionData.FilmGrainIsActivated;
+        vignetteToggle.isOn = _playerSelectionData.VignetteIsActivated;
+        filmGrainToggle.isOn = _playerSelectionData.FilmGrainIsActivated;
         postProcessingVignetteEffect.SetActive(_playerSelectionData.VignetteIsActivated);
         postProcessingFilmGrainEffect.SetActive(_playerSelectionData.FilmGrainIsActivated);
         _playerController = PlayerController.Instance;

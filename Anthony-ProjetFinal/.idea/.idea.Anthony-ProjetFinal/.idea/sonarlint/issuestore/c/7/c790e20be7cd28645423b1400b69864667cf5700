@@ -1,7 +1,6 @@
 
-‰csharpsquid:S1871H"`Either merge this branch with the identical one on line 58 or change one of the implementations.(ÒÌâ–øÿÿÿÿ8©Èæ”Â1
 mcsharpsquid:S2292"DMake this an auto-implemented property and remove its backing field.(è³áÙùÿÿÿÿ8ñ¸Ø“Â1
 mcsharpsquid:S2292"DMake this an auto-implemented property and remove its backing field.(ÃÑÀÿøÿÿÿÿ8æÓ¥†Â1
 lcsharpsquid:S2223%"HChange the visibility of 'SceneToLoad' or make it 'const' or 'readonly'.(ñô¾Ü8Ø†î½1
 rcsharpsquid:S2223&"IChange the visibility of 'CurrentScene' or make it 'const' or 'readonly'.(•Â”ûÿÿÿÿÿ8Òë°î½1
-~csharpsquid:S2696-"UMake the enclosing instance method 'static' or remove this set on the 'static' field.(¦…¦çùÿÿÿÿ8–ò¬”Â1
+~csharpsquid:S2696."UMake the enclosing instance method 'static' or remove this set on the 'static' field.(¦…¦çùÿÿÿÿ8–ò¬”Â1
