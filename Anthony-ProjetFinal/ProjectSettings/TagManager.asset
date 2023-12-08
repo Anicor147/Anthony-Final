@@ -21,7 +21,7 @@ TagManager:
   - PlayerLayer
   - BulletLayer
   - LevelCollider
-  - 
+  - EnemyLayer
   - 
   - 
   - 

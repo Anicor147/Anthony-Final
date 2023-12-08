@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3304945653849651847}
   - component: {fileID: 4316745775551639739}
   - component: {fileID: 2937590399805543610}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Cyber-Tiger
   m_TagString: Enemy
   m_Icon: {fileID: 0}
