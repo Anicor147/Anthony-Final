@@ -11,11 +11,11 @@ namespace Runtime.Player.PlayerScripts
         private float _maxStamina;
         private float _expCap;
         private int _damage;
+        private int _moneyCount;
         public int CurrentHealth { get; set; }
         public float CurrenStamina{ get; set; }
-        public float CurrentExp { get; set; }
-        public int Damage { get; set; }
 
+        
         public static PlayerController Instance;
 
         private void Awake()
@@ -32,10 +32,21 @@ namespace Runtime.Player.PlayerScripts
             Debug.Log($"CurrentHealth is {CurrentHealth}");
             EventManager.Instance.TriggerHealthChangeEvent(CurrentHealth);
             EventManager.Instance.TriggerOnCharacterHurt(true);
+            if (CurrentHealth <= 0 )
+            {
+                OnDeath();
+            }
+        }
+
+        public void IncreaseMoney( int value)
+        {
+            _moneyCount += value;
+            EventManager.Instance.TriggerOnMoneyChanged(_moneyCount);
         }
 
         private void OnDeath()
         {
+            EventManager.Instance.TriggerOnPlayerDead(true);
         }
     }
 }

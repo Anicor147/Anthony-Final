@@ -12,12 +12,6 @@ public class BulletPool : MonoBehaviour
     private void Awake()
     {
         children = GetComponentsInChildren<BulletScript>(includeInactive:true).ToList();
-        Debug.Log(children.Count);
-    }
-
-    void Start()
-    {
-        Debug.Log(children.Count);
     }
 
     internal BulletScript GetObject()

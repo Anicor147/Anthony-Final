@@ -32,7 +32,6 @@ namespace Runtime.Player.PlayerScripts
             var bullet = bulletPool.GetObject();
             bullet.transform.SetPositionAndRotation(transform.position , Quaternion.identity);
             bullet.gameObject.SetActive(true);
-            //InstantiateBullet();
             yield return new WaitForSeconds(0.5f);
             EventManager.Instance.TriggerOnShootingEvent(false);
             yield return new WaitForSeconds(0.5f);
@@ -56,13 +55,6 @@ namespace Runtime.Player.PlayerScripts
                 StartCoroutine(PrincipalAttackCoroutine());
                 EventManager.Instance.TriggerOnThrowingEvent(false);
             }
-        }
-
-        
-        
-        private void InstantiateBullet()
-        {
-            Instantiate(bulletPrefab,transform.position , Quaternion.Euler(transform.localScale.x,0,0) );
         }
     }
     

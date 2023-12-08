@@ -1,3 +1,4 @@
+using System;
 using Runtime.Extensions;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,6 +10,17 @@ namespace Runtime.Menu
     {
         [SerializeField] private GameObject settingsCanvas;
         [SerializeField] private GameObject charactersCanvas;
+
+
+        public void Start()
+        {
+            if (Time.timeScale == 0)
+            {
+                Time.timeScale = 1;
+            }
+        }
+
+
         //Open Setting
         public void OpenSetting()
         {

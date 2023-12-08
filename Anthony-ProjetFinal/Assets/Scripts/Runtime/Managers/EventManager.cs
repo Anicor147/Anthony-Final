@@ -7,12 +7,14 @@ namespace Runtime.Managers
     {
         public static EventManager Instance { get; private set; }
         public event Action<int> OnHealthChanged; 
+        public event Action<int> OnMoneyChanged; 
         public event Action<float> OnMagnitudeChanged;
         public event Action<bool> OnShootingChanged;
         public event Action<bool> OnThrowingChanged;
         public event Action<bool> OnPlayerSideChanged;
         public event Action<bool> OnPlayerHurt; 
         public event Action<Vector3> OnCharacterPosition;
+        public event Action<bool> OnPlayerDead; 
         void Awake()
         {
             if (Instance == null)
@@ -25,6 +27,14 @@ namespace Runtime.Managers
             }
         }
 
+        public void TriggerOnPlayerDead(bool value)
+        {
+            OnPlayerDead?.Invoke(value);
+        }
+        public void TriggerOnMoneyChanged(int value)
+        {
+            OnMoneyChanged?.Invoke(value);
+        }
         public void TriggerOnCharacterHurt(bool value)
         {
             OnPlayerHurt?.Invoke(value);

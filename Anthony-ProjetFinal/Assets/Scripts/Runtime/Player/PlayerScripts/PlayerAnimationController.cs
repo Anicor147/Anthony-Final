@@ -1,3 +1,4 @@
+using System;
 using Runtime.Managers;
 using Runtime.Menu;
 using UnityEngine;
@@ -68,6 +69,16 @@ namespace Runtime.Player.PlayerScripts
             EventManager.Instance.OnShootingChanged += PlayShootingAnimation;
             EventManager.Instance.OnThrowingChanged += PlayThrowingAnimation;
             EventManager.Instance.OnPlayerHurt += PlayerIsHurtAnimation;
+        }
+
+        private void OnDisable()
+        {
+            //Subscribe to Event - Source PlayerMovement 
+            EventManager.Instance.OnMagnitudeChanged -= PlayRunningAnimation;
+            //Subscribe to Event - Source PlayerAttack 
+            EventManager.Instance.OnShootingChanged -= PlayShootingAnimation;
+            EventManager.Instance.OnThrowingChanged -= PlayThrowingAnimation;
+            EventManager.Instance.OnPlayerHurt -= PlayerIsHurtAnimation;
         }
 
         private void PlayerIsHurtAnimation(bool isHurt)

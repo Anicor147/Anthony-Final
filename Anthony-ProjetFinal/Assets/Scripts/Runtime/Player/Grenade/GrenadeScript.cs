@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Runtime.Managers;
 using UnityEngine;
@@ -29,6 +30,11 @@ namespace Runtime.Player.Grenade
             _camera = Camera.main;
             //Subscribe to Event - Source PlayerAttack
             EventManager.Instance.OnThrowingChanged += IsThrowingCheckBool;
+        }
+
+        private void OnDisable()
+        {
+            EventManager.Instance.OnThrowingChanged -= IsThrowingCheckBool;
         }
 
         private void Update()

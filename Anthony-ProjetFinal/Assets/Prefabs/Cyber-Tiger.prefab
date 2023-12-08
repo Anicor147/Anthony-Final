@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3304945653849651847}
   - component: {fileID: 4316745775551639739}
   - component: {fileID: 2937590399805543610}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Cyber-Tiger
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 9
   m_Sprite: {fileID: 21300000, guid: ae99a2259ef56d44fb7bd6777fb08d55, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -194,3 +194,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyStatsSoScritps: {fileID: 11400000, guid: 251f339fceaabe14fb9dc50d86045008, type: 2}
+  loot: {fileID: 6483754061160628096, guid: 5829715f1b701494980db71ef52b86cc, type: 3}

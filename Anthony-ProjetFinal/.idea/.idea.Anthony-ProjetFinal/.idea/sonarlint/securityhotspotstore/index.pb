@@ -17,8 +17,6 @@ y
 IAssets/Scripts/Runtime/ScriptableObjects/SOScripts/EnemyStatsSOScritps.cs,c\0\c00a9b3d82aa8fd0cc9eac18bc158b339a5ea6b8
 z
 JAssets/Scripts/Runtime/ScriptableObjects/SOScripts/PlayerStatsSOScritps.cs,4\d\4d853ec861e5b603ebb3188069f31b2a6f94c045
-^
-.Assets/Scripts/Runtime/UI Scritps/UIScripts.cs,6\0\60a35d8f243f5276fd15bde67c9d7f2550982584
 Y
 )Assets/Scripts/Runtime/Finals.core.asmdef,b\7\b76e631be7f98039deb8d85194909e490c2986cd
 ›
@@ -57,3 +55,17 @@ k
 ;Assets/Scripts/Runtime/Player/Turret/TurretBulletsScript.cs,9\f\9f594cde05a916b26d1cd463de1fbf3363c3c69c
 y
 IAssets/Scripts/Runtime/ScriptableObjects/SOScripts/PlayerSelectionData.cs,f\e\fe98732f30eabb1ec559f7779e84f764eb009f55
+k
+;Assets/Scripts/Runtime/Player/Grenade/GrenadeDamageLogic.cs,1\a\1a0c85c8fd72b25048293020b065695c718183f7
+b
+2Assets/Scripts/Runtime/Player/Bullet/BulletPool.cs,4\3\437d5528b0bbf1252a8cb2c0f13d84e190ee6e57
+|
+LLibrary/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Runtime/TMP_Text.cs,e\a\eaa74457ca72efd0af0861a630ffa793cb0ebe12
+f
+6Assets/Scripts/Runtime/Player/HologrammeShaderSpeed.cs,c\c\cc1fb000a1728ddc82470453dd3eb7a9372c8e54
+^
+.Assets/Scripts/Runtime/Managers/LootManager.cs,7\c\7c64a2ff51061f445bfcd20e0cbe22b1c2babe38
+[
++Assets/Scripts/Runtime/Items/MoneyScript.cs,1\0\10c40a43492e90498b5197433e9099e6c749d812
+c
+3Assets/Scripts/Runtime/Menu/LevelSelectionScript.cs,4\4\44ec75e691cc407686c7ed586e0376338db92438

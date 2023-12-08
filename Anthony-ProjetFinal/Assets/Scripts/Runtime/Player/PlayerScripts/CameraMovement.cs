@@ -15,6 +15,11 @@ namespace Runtime.Player.PlayerScripts
       EventManager.Instance.OnCharacterPosition += vector3 => _playerPosition = vector3;
     }
 
+    private void OnDisable()
+    {
+      EventManager.Instance.OnCharacterPosition -= vector3 => _playerPosition = vector3;
+    }
+
     private void Update()
     {
       //follow player

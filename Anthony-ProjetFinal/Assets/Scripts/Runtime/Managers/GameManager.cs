@@ -40,8 +40,9 @@ namespace Runtime.Managers
         private void Awake()
         {
             Instance = this;
+            Debug.Log("is player 1 after loading" + playerSelectionData.IsPlayer1Selected );
+            Debug.Log("is player 2 after loading" + playerSelectionData.IsPlayer2Selected );
             CharactersSelection();
-            ResetValueSo();
             CurrentScene = SceneToLoad;
             this.LoadScene(SceneToLoad, LoadSceneMode.Additive);
         }
@@ -56,6 +57,7 @@ namespace Runtime.Managers
         {
             if (playerSelectionData.IsPlayer1Selected)
             {
+                Debug.Log("should be sam");
                 IsPlayer1 = true;
                 IsPlayer2 = false;
                 player1Object.SetActive(true);
@@ -63,6 +65,7 @@ namespace Runtime.Managers
             }
             else if (playerSelectionData.IsPlayer2Selected)
             {
+                Debug.Log("Should be marth");
                 IsPlayer1 = false;
                 IsPlayer2 = true;
                 player2Object.SetActive(true);
@@ -71,6 +74,7 @@ namespace Runtime.Managers
             else
             {
                 // Default
+                Debug.Log("its default");
                 IsPlayer1 = true;
                 IsPlayer2 = false;
                 player1Object.SetActive(true);

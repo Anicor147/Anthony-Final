@@ -8,26 +8,33 @@ namespace Runtime.Menu
     public class CharacterSelectScripts : MonoBehaviour
     {
         [SerializeField] private PlayerSelectionData playerSelectionData;
-        private bool _fromMenu;
-        public bool FromMenu { get => _fromMenu; private set => _fromMenu = value; }
-        public static CharacterSelectScripts Instance { get; private set; }
-        
+
+        [SerializeField] private GameObject levelSelectionMenu;
+
+        // private bool _fromMenu;
+        //public bool FromMenu { get => _fromMenu; private set => _fromMenu = value; }
+        //public static CharacterSelectScripts Instance { get; private set; }
+
         private void Awake()
         {
-            Instance = this;
+            // Instance = this;
         }
 
         private void Start()
         {
-            _fromMenu = true;
+            //  _fromMenu = true;
+            playerSelectionData.ResetValue();
+            Debug.Log("is player 1 after reset" + playerSelectionData.IsPlayer1Selected );
+            Debug.Log("is player 2 after reset" + playerSelectionData.IsPlayer2Selected );
         }
 
         //Choose Character1
         public void SelectPlayer1()
         {
-          playerSelectionData.IsPlayer1Selected = true;
-          playerSelectionData.IsPlayer2Selected = false;
-            this.LoadScene("Level1", LoadSceneMode.Single);
+            playerSelectionData.IsPlayer1Selected = true;
+            playerSelectionData.IsPlayer2Selected = false;
+            levelSelectionMenu.SetActive(true);
+            Debug.Log("is player 1" + playerSelectionData.IsPlayer1Selected );
         }
 
         //Choose Character2
@@ -35,7 +42,9 @@ namespace Runtime.Menu
         {
             playerSelectionData.IsPlayer1Selected = false;
             playerSelectionData.IsPlayer2Selected = true;
-            this.LoadScene("Level1", LoadSceneMode.Single);
+            Debug.Log("is player 2" + playerSelectionData.IsPlayer2Selected );
+            // this.LoadScene("Level1", LoadSceneMode.Single);
+            levelSelectionMenu.SetActive(true);
         }
     }
 }

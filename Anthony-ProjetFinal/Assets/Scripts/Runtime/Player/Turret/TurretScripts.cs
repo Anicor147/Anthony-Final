@@ -41,6 +41,11 @@ public class TurretScripts : MonoBehaviour
         EventManager.Instance.OnThrowingChanged += value => _rightIsPressed = value;
     }
 
+    private void OnDisable()
+    {
+        EventManager.Instance.OnThrowingChanged -= value => _rightIsPressed = value;
+    }
+
     private void Update()
     {
         _mousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
