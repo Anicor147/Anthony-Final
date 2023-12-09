@@ -69,3 +69,17 @@ f
 +Assets/Scripts/Runtime/Items/MoneyScript.cs,1\0\10c40a43492e90498b5197433e9099e6c749d812
 c
 3Assets/Scripts/Runtime/Menu/LevelSelectionScript.cs,4\4\44ec75e691cc407686c7ed586e0376338db92438
+`
+0Assets/Scripts/Runtime/Managers/Level2Manager.cs,b\a\bae747083d02039c501867aa664aeb942acad749
+“
+cLibrary/PackageCache/com.unity.shadergraph@14.0.8/Editor/Drawing/Blackboard/SGBlackboardCategory.cs,4\5\4560e0d4271e204afc7f4c3f2cf01a9a7c635c7e
+‹
+[Library/PackageCache/com.unity.shadergraph@14.0.8/Editor/Data/Graphs/SerializableTexture.cs,c\e\ce0d4aff67dd514dd0075d0d38f194b0a16f6650
+f
+6Assets/Scripts/Runtime/Enemies/EnemyRangeController.cs,1\0\1033e80593477ff0578b17496b0c9db930ea4abb
+[
++Assets/Scripts/Runtime/Menu/SurviveTimer.cs,f\3\f30f5ab2d344419129cb8f4a441c4612250977be
+a
+1Assets/Scripts/Runtime/Menu/EnemyKilledCounter.cs,6\4\646d852dcf0c608776fb50ccb9a459d3ce6c7ca6
+]
+-Assets/Scripts/Runtime/Enemies/EnemyBullet.cs,6\1\613cb3579695e93d974cbdcfa8cfe79c9dc08669

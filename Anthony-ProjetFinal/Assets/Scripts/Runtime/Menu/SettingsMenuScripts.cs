@@ -18,6 +18,7 @@ public class SettingsMenuScripts : MonoBehaviour
     [SerializeField] private Slider healthSlider;
     [SerializeField] private TMP_Text moneyCounterText;
     [SerializeField] private TMP_Text moneyGameOverCounterText;
+    //[SerializeField] private TMP_Text timeSurvived;
     private bool _settingIsOpen;
     private int _moneyCounter;
     private bool _playerIsDead;

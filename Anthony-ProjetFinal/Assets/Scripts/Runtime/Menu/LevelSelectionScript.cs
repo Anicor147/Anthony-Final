@@ -18,7 +18,7 @@ namespace Runtime.Menu
         
         public void LoadLevel3()
         {
-            this.LoadScene("Level2", LoadSceneMode.Single);
+            this.LoadScene("Level3", LoadSceneMode.Single);
         }
     }
 }
