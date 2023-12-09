@@ -261,6 +261,7 @@ MonoBehaviour:
   playerPosition: {fileID: 480834513933738965}
   turretBullet: {fileID: 8601783913401800358, guid: be6308e7967a1e24e9929307e6aff0e4, type: 3}
   _turretLimit: 3
+  turretBulletPool: {fileID: 0}
 --- !u!1 &2537205677393662510
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,6 +307,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 8601783913401800358, guid: 85047f4a06a3a694fb5ab8afb6fe9a91, type: 3}
+  bulletPool: {fileID: 0}
 --- !u!1 &6909668460471316500
 GameObject:
   m_ObjectHideFlags: 0

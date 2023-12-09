@@ -10,58 +10,34 @@ namespace Runtime.Managers
 {
     public class LevelManager : MonoBehaviour
     {
-        public static LevelManager Instance { get; private set; }
-    
-        [HideInInspector] public List<GameObject> _enemyList;
-        [SerializeField] private float enemyCount;
-        [SerializeField]private GameObject cyberTigerPrefab;
+        [SerializeField] private GameObject cyberTigerPrefab;
+        [SerializeField] private float spawnRate;
         private float _radius = 20;
         private bool _loadScene;
-
-        private void Awake()
-        {
-            Instance = this;
-        }
-
+        
         void Start()
         {
-            _enemyList = new List<GameObject>();
-            AddGameObjectOnList();
             this.StartTimer(1f, () => StartCoroutine(SpawnEnemy()));
-        }
-
-        private void Update()
-        {
-            ZoneComplete();
-        }
-
-        void AddGameObjectOnList()
-        {
-            for (int i = 0; i < enemyCount; i++)
-            {
-                cyberTigerPrefab = Instantiate(cyberTigerPrefab, Vector3.zero, Quaternion.identity);
-                cyberTigerPrefab.SetActive(false);
-                _enemyList.Add(cyberTigerPrefab);
-            }
-        }
-        private IEnumerator SpawnEnemy()
-        {
-            foreach (var enemy in _enemyList)
-            {
-                var insideUnitCircle = Random.insideUnitCircle.normalized * _radius;
-                enemy.transform.position = new Vector3(insideUnitCircle.x ,insideUnitCircle.y );
-                enemy.SetActive(true);
-                yield return new WaitForSeconds(0.5f);
-            }
+            
+            var player =  GameObject.FindGameObjectWithTag("Player");
+            player.transform.position = transform.position;
         }
         
-        private void ZoneComplete()
+        private IEnumerator SpawnEnemy()
         {
-            if (_enemyList.Count <= 0 && !_loadScene)
+            while (true)
             {
-                GameManager.LoadScene("Level2");
-                _loadScene = true;
+                var insideUnitCircle = RandomPosition();
+                Instantiate(cyberTigerPrefab, insideUnitCircle, Quaternion.identity , transform);
+                yield return new WaitForSeconds(spawnRate);
             }
         }
+
+        private Vector3 RandomPosition()
+        {
+            var insideUnitCircle = Random.insideUnitCircle.normalized * _radius;
+            return insideUnitCircle;
+        }
+        
     }
 }

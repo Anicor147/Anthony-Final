@@ -55,7 +55,8 @@ namespace Runtime.Enemies
         
         public override void OnDeath()
         {
-            LevelManager.Instance._enemyList.Remove(gameObject);
+            //LevelManager.Instance._enemyList.Remove(gameObject);
+            EnemyKilledCounter.Instance.EnemyCounter++;
             loot.MoneyLoot(transform.position);
             Destroy(gameObject);
         }

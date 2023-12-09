@@ -149,7 +149,7 @@ Transform:
   m_GameObject: {fileID: 325570593}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.048489, y: -30.360617, z: -1.187314}
+  m_LocalPosition: {x: 2.5, y: 1.1, z: -1.187314}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -167,9 +167,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ad62ba6c3c581c449657f8128424e00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyList: []
-  enemyCount: 2
   cyberTigerPrefab: {fileID: 3041175857801356383, guid: 722aee21616620a4f88ad72b120f38b9, type: 3}
+  spawnRate: 2
 --- !u!1 &471564344
 GameObject:
   m_ObjectHideFlags: 0
@@ -182,7 +181,7 @@ GameObject:
   - component: {fileID: 471564347}
   - component: {fileID: 471564346}
   - component: {fileID: 471564350}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
