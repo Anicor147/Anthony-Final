@@ -1,6 +1,7 @@
 using System;
 using Runtime.Enemies;
 using Runtime.Extensions;
+using Runtime.Managers;
 using Runtime.ScriptableObjects.SOScripts;
 using UnityEngine;
 using Vector3 = UnityEngine.Vector3;
@@ -11,6 +12,7 @@ public class EnemyRangeController : EnemyBase
     [SerializeField] private LootManager loot;
     [SerializeField] private GameObject bulletPrefab;
     private SpriteRenderer _spriteRenderer;
+    private Animator _animator;
     private Rigidbody2D _rigidbody2D;
     private GameObject player;
     private float timer= 1f;
@@ -20,9 +22,9 @@ public class EnemyRangeController : EnemyBase
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        _animator = GetComponent<Animator>();
         MaxEHealth = _enemyStatsSoScritps.MaxEHealth;
         Espeed = _enemyStatsSoScritps.Espeed;
-        EexpDrop = _enemyStatsSoScritps.EexpDrop;
         EDamage = _enemyStatsSoScritps.EDamage;
         ERange = 10;
     }
@@ -61,7 +63,9 @@ public class EnemyRangeController : EnemyBase
         //LevelManager.Instance._enemyList.Remove(gameObject);
         EnemyKilledCounter.Instance.EnemyCounter++;
         loot.MoneyLoot(transform.position);
-        Destroy(gameObject);
+        _animator.SetTrigger("IsDead");
+        SoundEffectManager.Instance.PlayExplosionSound();
+        this.StartTimer(0.5f, () => Destroy(gameObject));
     }
 
     public override void EnemyMovement()

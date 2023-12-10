@@ -32,6 +32,7 @@ namespace Runtime.Player.PlayerScripts
             var bullet = bulletPool.GetObject();
             bullet.transform.SetPositionAndRotation(transform.position , Quaternion.identity);
             bullet.gameObject.SetActive(true);
+            SoundEffectManager.Instance.PlayBeamSound();
             yield return new WaitForSeconds(0.5f);
             EventManager.Instance.TriggerOnShootingEvent(false);
             yield return new WaitForSeconds(0.5f);

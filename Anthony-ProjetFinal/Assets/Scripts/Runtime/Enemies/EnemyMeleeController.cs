@@ -18,13 +18,15 @@ namespace Runtime.Enemies
         private GameObject player;
         private bool isPushBack;
         [FormerlySerializedAs("_loot")] [SerializeField] private LootManager loot;
+        private Animator _animator;
+
         private void Awake()
         {
             _rigidbody2D = GetComponent<Rigidbody2D>();
             _spriteRenderer = GetComponent<SpriteRenderer>();
+            _animator = GetComponent<Animator>();
             MaxEHealth = _enemyStatsSoScritps.MaxEHealth;
             Espeed = _enemyStatsSoScritps.Espeed;
-            EexpDrop = _enemyStatsSoScritps.EexpDrop;
             EDamage = _enemyStatsSoScritps.EDamage;
             ERange = 10;
         }
@@ -58,7 +60,9 @@ namespace Runtime.Enemies
             //LevelManager.Instance._enemyList.Remove(gameObject);
             EnemyKilledCounter.Instance.EnemyCounter++;
             loot.MoneyLoot(transform.position);
-            Destroy(gameObject);
+            _animator.SetTrigger("IsDead");
+            SoundEffectManager.Instance.PlayExplosionSound();
+            this.StartTimer(0.5f, () => Destroy(gameObject));
         }
         //Goes toward player
         public override void EnemyMovement()

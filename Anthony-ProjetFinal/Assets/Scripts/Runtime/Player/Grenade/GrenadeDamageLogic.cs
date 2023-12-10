@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Runtime.Enemies;
+using Runtime.Managers;
 using UnityEngine;
 
 public class GrenadeDamageLogic : MonoBehaviour
@@ -31,6 +32,7 @@ public class GrenadeDamageLogic : MonoBehaviour
         if (!other.gameObject.CompareTag("Enemy")) return;
         other.gameObject.GetComponent<EnemyBase>().TakeDamage(grenadeDamage);
         _animator.SetBool("isExploding", true);
+        SoundEffectManager.Instance.PlayExplosionSound();
         _startTimer = true;
     }
 

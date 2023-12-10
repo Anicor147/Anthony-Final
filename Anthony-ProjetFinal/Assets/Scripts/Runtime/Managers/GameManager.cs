@@ -35,7 +35,7 @@ namespace Runtime.Managers
 
         public static GameManager Instance { get; private set; }
         internal static string SceneToLoad = "Level1";
-        internal static string CurrentScene = null;
+         public static string CurrentScene = null;
 
         private void Awake()
         {
