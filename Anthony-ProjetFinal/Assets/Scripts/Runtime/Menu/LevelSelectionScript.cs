@@ -10,12 +10,12 @@ namespace Runtime.Menu
         {
             this.LoadScene("Level1", LoadSceneMode.Single);
         }
-        
+
         public void LoadLevel2()
         {
             this.LoadScene("Level2", LoadSceneMode.Single);
         }
-        
+
         public void LoadLevel3()
         {
             this.LoadScene("Level3", LoadSceneMode.Single);

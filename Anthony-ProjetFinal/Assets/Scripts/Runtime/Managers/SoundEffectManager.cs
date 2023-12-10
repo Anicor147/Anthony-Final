@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -10,7 +9,10 @@ namespace Runtime.Managers
         public static SoundEffectManager Instance { get; private set; }
         private AudioSource _audioSource;
         [SerializeField] private AudioClip beamAudioClip;
-        [FormerlySerializedAs("ExplosionAudioClip")] [SerializeField] private AudioClip explosionAudioClip;
+
+        [FormerlySerializedAs("ExplosionAudioClip")] [SerializeField]
+        private AudioClip explosionAudioClip;
+
         [SerializeField] private Slider soundEffectSlider;
         [SerializeField] private PlayerSelectionData playerSelectionData;
 

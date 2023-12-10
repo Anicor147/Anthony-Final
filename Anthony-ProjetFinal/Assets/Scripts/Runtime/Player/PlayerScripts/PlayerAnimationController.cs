@@ -1,6 +1,4 @@
-using System;
 using Runtime.Managers;
-using Runtime.Menu;
 using UnityEngine;
 
 namespace Runtime.Player.PlayerScripts

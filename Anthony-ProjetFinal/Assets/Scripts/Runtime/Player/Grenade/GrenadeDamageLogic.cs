@@ -1,52 +1,52 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using Runtime.Enemies;
 using Runtime.Managers;
 using UnityEngine;
 
-public class GrenadeDamageLogic : MonoBehaviour
+namespace Runtime.Player.Grenade
 {
-    [SerializeField] private int grenadeDamage;
-    private Animator _animator;
-    private bool _isExploding;
-    private float _timer = 0.5f;
-    private bool _startTimer;
-
-    private void Awake()
+    public class GrenadeDamageLogic : MonoBehaviour
     {
-        _animator = GetComponent<Animator>();
-    }
+        [SerializeField] private int grenadeDamage;
+        private Animator _animator;
+        private bool _isExploding;
+        private float _timer = 0.5f;
+        private bool _startTimer;
 
-    private void Update()
-    {
-        if (_startTimer)
+        private void Awake()
         {
-            TimerExplosion();
+            _animator = GetComponent<Animator>();
         }
-    }
 
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (!other.gameObject.CompareTag("Enemy")) return;
-        other.gameObject.GetComponent<EnemyBase>().TakeDamage(grenadeDamage);
-        _animator.SetBool("isExploding", true);
-        SoundEffectManager.Instance.PlayExplosionSound();
-        _startTimer = true;
-    }
-
-    private void TimerExplosion()
-    {
-        _timer -= Time.deltaTime;
-        if (_timer <= 0)
+        private void Update()
         {
-            OnDestroyGrenade();
+            if (_startTimer)
+            {
+                TimerExplosion();
+            }
         }
-    }
 
-    private void OnDestroyGrenade()
-    {
-        Destroy(gameObject);
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (!other.gameObject.CompareTag("Enemy")) return;
+            other.gameObject.GetComponent<EnemyBase>().TakeDamage(grenadeDamage);
+            _animator.SetBool("isExploding", true);
+            SoundEffectManager.Instance.PlayExplosionSound();
+            _startTimer = true;
+        }
+
+        private void TimerExplosion()
+        {
+            _timer -= Time.deltaTime;
+            if (_timer <= 0)
+            {
+                OnDestroyGrenade();
+            }
+        }
+
+        private void OnDestroyGrenade()
+        {
+            Destroy(gameObject);
+        }
     }
 }

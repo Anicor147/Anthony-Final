@@ -13,7 +13,7 @@ public class PlayerSelectionData : ScriptableObject
     private float musicSoundValue = 0.1f;
     private float soundEffectValue = 0.1f;
     private void OnEnable() => hideFlags = HideFlags.DontUnloadUnusedAsset;
-    
+
     public float MusicSoundValue
     {
         get => musicSoundValue;

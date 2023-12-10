@@ -1,82 +1,80 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Runtime.Managers;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
-public class AudioManager : MonoBehaviour
+namespace Runtime.Managers
 {
-    private AudioSource audioSource;
-    [SerializeField] private AudioClip audioMainMenu;
-    [SerializeField] private AudioClip audioLevel1;
-    [SerializeField] private AudioClip audioLevel2;
-    [SerializeField] private AudioClip audioLevel3;
-    [SerializeField] private Slider musicSlider;
-    [SerializeField] private Slider soundEffectSlider;
-    [SerializeField] private PlayerSelectionData playerSelectionData;
-    private Scene _currentScene;
-
-    private void Awake()
+    public class AudioManager : MonoBehaviour
     {
-        audioSource = GetComponent<AudioSource>();
-    }
+        private AudioSource audioSource;
+        [SerializeField] private AudioClip audioMainMenu;
+        [SerializeField] private AudioClip audioLevel1;
+        [SerializeField] private AudioClip audioLevel2;
+        [SerializeField] private AudioClip audioLevel3;
+        [SerializeField] private Slider musicSlider;
+        [SerializeField] private Slider soundEffectSlider;
+        [SerializeField] private PlayerSelectionData playerSelectionData;
+        private Scene _currentScene;
 
-    void Start()
-    {
-        _currentScene = SceneManager.GetActiveScene();
-        if (_currentScene.name == "Main")
+        private void Awake()
         {
-            musicSlider.value = playerSelectionData.MusicSoundValue;
-            audioSource.volume = musicSlider.value;
-        }
-        else if (_currentScene.name == "MainMenu")
-        {
-            musicSlider.value = playerSelectionData.MusicSoundValue;
-            soundEffectSlider.value = playerSelectionData.SoundEffectValue;
-            Debug.Log(playerSelectionData.SoundEffectValue);
-            audioSource.volume = musicSlider.value;
+            audioSource = GetComponent<AudioSource>();
         }
 
-        ChangeAudioSourceClip();
-    }
-
-    private void ChangeAudioSourceClip()
-    {
-        if (_currentScene.name != "MainMenu")
+        void Start()
         {
-            switch (GameManager.CurrentScene)
+            _currentScene = SceneManager.GetActiveScene();
+            if (_currentScene.name == "Main")
             {
-                case "Level1":
-                    audioSource.clip = audioLevel1;
-                    break;
-                case "Level2":
-                    audioSource.clip = audioLevel2;
-                    break;
-                case "Level3":
-                    audioSource.clip = audioLevel3;
-                    break;
+                musicSlider.value = playerSelectionData.MusicSoundValue;
+                audioSource.volume = musicSlider.value;
             }
+            else if (_currentScene.name == "MainMenu")
+            {
+                musicSlider.value = playerSelectionData.MusicSoundValue;
+                soundEffectSlider.value = playerSelectionData.SoundEffectValue;
+                Debug.Log(playerSelectionData.SoundEffectValue);
+                audioSource.volume = musicSlider.value;
+            }
+
+            ChangeAudioSourceClip();
         }
-        else if (_currentScene.name == "MainMenu")
+
+        private void ChangeAudioSourceClip()
         {
-            audioSource.clip = audioMainMenu;
+            if (_currentScene.name != "MainMenu")
+            {
+                switch (GameManager.CurrentScene)
+                {
+                    case "Level1":
+                        audioSource.clip = audioLevel1;
+                        break;
+                    case "Level2":
+                        audioSource.clip = audioLevel2;
+                        break;
+                    case "Level3":
+                        audioSource.clip = audioLevel3;
+                        break;
+                }
+            }
+            else if (_currentScene.name == "MainMenu")
+            {
+                audioSource.clip = audioMainMenu;
+            }
+
+            audioSource.Play();
         }
 
-        audioSource.Play();
-    }
 
+        public void MusicVolumeChange(float value)
+        {
+            audioSource.volume = value;
+            playerSelectionData.MusicSoundValue = value;
+        }
 
-    public void MusicVolumeChange(float value)
-    {
-        audioSource.volume = value;
-        playerSelectionData.MusicSoundValue = value;
-    }
-
-    public void SoundEffectVolumeChange(float value)
-    {
-        playerSelectionData.SoundEffectValue = value;
+        public void SoundEffectVolumeChange(float value)
+        {
+            playerSelectionData.SoundEffectValue = value;
+        }
     }
 }

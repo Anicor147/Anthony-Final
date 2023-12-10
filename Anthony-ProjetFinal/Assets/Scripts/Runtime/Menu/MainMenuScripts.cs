@@ -1,8 +1,5 @@
-using System;
-using Runtime.Extensions;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
+
 
 namespace Runtime.Menu
 {
@@ -26,7 +23,7 @@ namespace Runtime.Menu
         {
             settingsCanvas.SetActive(true);
         }
-        
+
         //Close Setting
         public void CloseSetting()
         {
@@ -44,7 +41,7 @@ namespace Runtime.Menu
         {
             charactersCanvas.SetActive(true);
         }
-        
+
         //Close CharacterSelection
         public void CloseCharacterSelectionMenu()
         {

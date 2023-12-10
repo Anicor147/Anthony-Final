@@ -87,3 +87,5 @@ a
 0Assets/Scripts/Runtime/Managers/Level3Manager.cs,f\c\fc1b83b7bbc904a25a780372718d4ef5ca7f797f
 _
 /Assets/Scripts/Runtime/Managers/AudioManager.cs,9\5\957035261734db33a7bf7f5d1214770a76f47a71
+e
+5Assets/Scripts/Runtime/Managers/SoundEffectManager.cs,c\f\cfa3b0c24998c0f898dfeda2ae515b041f9e3cca
