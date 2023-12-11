@@ -1,18 +1,19 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using Runtime.Player.PlayerScripts;
 using UnityEngine;
 
-public class MoneyScript : MonoBehaviour
+namespace Runtime.Items
 {
-    private int _moneyValue = 10;
-    private void OnTriggerEnter2D(Collider2D other)
+    public class MoneyScript : MonoBehaviour
     {
-        if (other.gameObject.CompareTag("Player"))
+        private int _moneyValue = 10;
+
+        private void OnTriggerEnter2D(Collider2D other)
         {
-            other.GetComponent<PlayerController>().IncreaseMoney(_moneyValue);
-            Destroy(gameObject);
+            if (other.gameObject.CompareTag("Player"))
+            {
+                other.GetComponent<PlayerController>().IncreaseMoney(_moneyValue);
+                Destroy(gameObject);
+            }
         }
     }
 }

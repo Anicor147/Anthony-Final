@@ -1,24 +1,25 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Runtime.Player.Bullet;
 using UnityEngine;
 
-public class BulletPool : MonoBehaviour
+namespace Runtime.Player.Bullet
 {
-    private List<BulletScript> children;
-    private int poolIndex;
-
-    private void Awake()
+    public class BulletPool : MonoBehaviour
     {
-        children = GetComponentsInChildren<BulletScript>(includeInactive:true).ToList();
-    }
+        private List<BulletScript> children;
+        private int poolIndex;
 
-    internal BulletScript GetObject()
-    {
-        poolIndex %= children.Count;
-        var next = children[poolIndex++];
-        next.Reset();
-        return next;
+        private void Awake()
+        {
+            children = GetComponentsInChildren<BulletScript>(includeInactive: true).ToList();
+        }
+
+        internal BulletScript GetObject()
+        {
+            poolIndex %= children.Count;
+            var next = children[poolIndex++];
+            next.Reset();
+            return next;
+        }
     }
 }

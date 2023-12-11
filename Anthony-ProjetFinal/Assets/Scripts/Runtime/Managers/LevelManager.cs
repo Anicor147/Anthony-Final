@@ -1,9 +1,6 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using Runtime.Extensions;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 namespace Runtime.Managers
@@ -14,21 +11,21 @@ namespace Runtime.Managers
         [SerializeField] private float spawnRate;
         private float _radius = 20;
         private bool _loadScene;
-        
+
         void Start()
         {
             this.StartTimer(1f, () => StartCoroutine(SpawnEnemy()));
-            
-            var player =  GameObject.FindGameObjectWithTag("Player");
+
+            var player = GameObject.FindGameObjectWithTag("Player");
             player.transform.position = transform.position;
         }
-        
+
         private IEnumerator SpawnEnemy()
         {
             while (true)
             {
                 var insideUnitCircle = RandomPosition();
-                Instantiate(cyberTigerPrefab, insideUnitCircle, Quaternion.identity , transform);
+                Instantiate(cyberTigerPrefab, insideUnitCircle, Quaternion.identity, transform);
                 yield return new WaitForSeconds(spawnRate);
             }
         }
@@ -38,6 +35,5 @@ namespace Runtime.Managers
             var insideUnitCircle = Random.insideUnitCircle.normalized * _radius;
             return insideUnitCircle;
         }
-        
     }
 }

@@ -1,15 +1,6 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using Runtime.Enemies;
 using Runtime.Extensions;
-using Runtime.Menu;
 using UnityEngine;
-using Random = UnityEngine.Random;
 using UnityEngine.SceneManagement;
-using UnityEngine.UIElements;
 
 namespace Runtime.Managers
 {
@@ -35,13 +26,13 @@ namespace Runtime.Managers
 
         public static GameManager Instance { get; private set; }
         internal static string SceneToLoad = "Level1";
-        internal static string CurrentScene = null;
+        public static string CurrentScene = null;
 
         private void Awake()
         {
             Instance = this;
-            Debug.Log("is player 1 after loading" + playerSelectionData.IsPlayer1Selected );
-            Debug.Log("is player 2 after loading" + playerSelectionData.IsPlayer2Selected );
+            Debug.Log("is player 1 after loading" + playerSelectionData.IsPlayer1Selected);
+            Debug.Log("is player 2 after loading" + playerSelectionData.IsPlayer2Selected);
             CharactersSelection();
             CurrentScene = SceneToLoad;
             this.LoadScene(SceneToLoad, LoadSceneMode.Additive);

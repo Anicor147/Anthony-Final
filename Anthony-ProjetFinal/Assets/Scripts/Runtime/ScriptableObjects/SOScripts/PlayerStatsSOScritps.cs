@@ -7,6 +7,6 @@ namespace Runtime.ScriptableObjects.SOScripts
     {
         public float _maxHealth;
         public float _maxStamina;
-        public float _expCap;   
+        public float _expCap;
     }
 }
