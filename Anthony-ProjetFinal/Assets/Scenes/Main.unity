@@ -970,7 +970,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -229, y: 142}
+  m_AnchoredPosition: {x: -188, y: 142}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &202270000
@@ -993,7 +993,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Music Volume Text
+  m_text: 'Music Volume '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d9c997d6e1de30343a95bb023db450c4, type: 2}
   m_sharedMaterial: {fileID: -861410980317349815, guid: d9c997d6e1de30343a95bb023db450c4, type: 2}
@@ -2675,7 +2675,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beamAudioClip: {fileID: 8300000, guid: 87734d1a755392446bd5e4ecc021df05, type: 3}
-  ExplosionAudioClip: {fileID: 8300000, guid: fbfd8366c7263d647afbcde44e3d454c, type: 3}
+  explosionAudioClip: {fileID: 8300000, guid: fbfd8366c7263d647afbcde44e3d454c, type: 3}
   soundEffectSlider: {fileID: 1567134623}
   playerSelectionData: {fileID: 11400000, guid: 4f43487710a75944cabb375abd03dd32, type: 2}
 --- !u!82 &775726171
@@ -4081,7 +4081,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -116.73726, y: 0}
+  m_AnchoredPosition: {x: -91.5, y: -10}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1214155354
@@ -4131,8 +4131,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15
-  m_fontSizeBase: 15
+  m_fontSize: 12
+  m_fontSizeBase: 12
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4411,7 +4411,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -116.73726, y: 0}
+  m_AnchoredPosition: {x: -95, y: -10}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1295551192
@@ -6702,7 +6702,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -217, y: 282}
+  m_AnchoredPosition: {x: -185, y: 257}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2121130013
@@ -6725,7 +6725,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: SE Text
+  m_text: Sound Effect
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d9c997d6e1de30343a95bb023db450c4, type: 2}
   m_sharedMaterial: {fileID: -861410980317349815, guid: d9c997d6e1de30343a95bb023db450c4, type: 2}
@@ -6752,8 +6752,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15
-  m_fontSizeBase: 15
+  m_fontSize: 12
+  m_fontSizeBase: 12
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
