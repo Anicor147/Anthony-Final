@@ -194,5 +194,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
-  bulletDamage: 5
-  turretScale: {fileID: 9122414156277529467, guid: cdb08229bf87aaa409795e83aebf18c3, type: 3}
+  bulletDamage: 15
