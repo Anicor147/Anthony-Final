@@ -13,10 +13,10 @@ namespace Runtime.Player
         {
             _imageRenderer = GetComponent<Image>();
         }
-    
+
         void Start()
         {
-            _imageRenderer.material.SetFloat("_HologrammeSpeed",speed);
+            _imageRenderer.material.SetFloat("_HologrammeSpeed", speed);
         }
     }
 }

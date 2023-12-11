@@ -83,3 +83,9 @@ a
 1Assets/Scripts/Runtime/Menu/EnemyKilledCounter.cs,6\4\646d852dcf0c608776fb50ccb9a459d3ce6c7ca6
 ]
 -Assets/Scripts/Runtime/Enemies/EnemyBullet.cs,6\1\613cb3579695e93d974cbdcfa8cfe79c9dc08669
+`
+0Assets/Scripts/Runtime/Managers/Level3Manager.cs,f\c\fc1b83b7bbc904a25a780372718d4ef5ca7f797f
+_
+/Assets/Scripts/Runtime/Managers/AudioManager.cs,9\5\957035261734db33a7bf7f5d1214770a76f47a71
+e
+5Assets/Scripts/Runtime/Managers/SoundEffectManager.cs,c\f\cfa3b0c24998c0f898dfeda2ae515b041f9e3cca

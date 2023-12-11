@@ -1,8 +1,7 @@
-using System;
 using System.Collections;
 using Runtime.Extensions;
 using Runtime.Managers;
-using Runtime.Menu;
+using Runtime.Player.Bullet;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,32 +9,34 @@ namespace Runtime.Player.PlayerScripts
 {
     public class PlayerAttack : MonoBehaviour
     {
-        [SerializeField] private GameObject bulletPrefab;
         [SerializeField] private BulletPool bulletPool;
         private bool isThrowing = false;
         private bool isCoroutineRunning = false;
+
         private void Start()
         {
             //start timer
-            this.StartTimer(3 ,() => StartCoroutine(PrincipalAttackCoroutine()) );
+            this.StartTimer(3, () => StartCoroutine(PrincipalAttackCoroutine()));
         }
-        
-        private  IEnumerator PrincipalAttackCoroutine()
+
+        private IEnumerator PrincipalAttackCoroutine()
         {
             if (isCoroutineRunning) yield break;
             isCoroutineRunning = true;
-            
-            while (!isThrowing )
+
+            while (!isThrowing)
             {
-            EventManager.Instance.TriggerOnShootingEvent(true);
-            yield return new WaitForSeconds(0.1f);
-            var bullet = bulletPool.GetObject();
-            bullet.transform.SetPositionAndRotation(transform.position , Quaternion.identity);
-            bullet.gameObject.SetActive(true);
-            yield return new WaitForSeconds(0.5f);
-            EventManager.Instance.TriggerOnShootingEvent(false);
-            yield return new WaitForSeconds(0.5f);
+                EventManager.Instance.TriggerOnShootingEvent(true);
+                yield return new WaitForSeconds(0.1f);
+                var bullet = bulletPool.GetObject();
+                bullet.transform.SetPositionAndRotation(transform.position, Quaternion.identity);
+                bullet.gameObject.SetActive(true);
+                SoundEffectManager.Instance.PlayBeamSound();
+                yield return new WaitForSeconds(0.5f);
+                EventManager.Instance.TriggerOnShootingEvent(false);
+                yield return new WaitForSeconds(0.5f);
             }
+
             isCoroutineRunning = false;
         }
 
@@ -57,5 +58,4 @@ namespace Runtime.Player.PlayerScripts
             }
         }
     }
-    
 }

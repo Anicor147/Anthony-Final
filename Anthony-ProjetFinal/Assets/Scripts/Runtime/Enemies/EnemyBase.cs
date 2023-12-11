@@ -6,12 +6,10 @@ namespace Runtime.Enemies
     {
         public float MaxEHealth { get; set; }
 
-        public float Espeed { get; set; }
-
-        public float EexpDrop { get; set; }
-
+        public float ESpeed { get; set; }
         public int EDamage { get; set; }
         public int ERange { get; set; }
+
         public abstract void TakeDamage(int value);
         public abstract void OnDeath();
         public abstract void EnemyMovement();

@@ -7,12 +7,25 @@ using UnityEngine;
 public class PlayerSelectionData : ScriptableObject
 {
     private bool isPlayer1Selected;
-   private bool isPlayer2Selected;
+    private bool isPlayer2Selected;
     private bool vignetteIsActivated = true;
-    private bool filmGrainIsActivated =true;
+    private bool filmGrainIsActivated = true;
+    private float musicSoundValue = 0.1f;
+    private float soundEffectValue = 0.1f;
+    private void OnEnable() => hideFlags = HideFlags.DontUnloadUnusedAsset;
 
-   private void OnEnable() => hideFlags = HideFlags.DontUnloadUnusedAsset;
-    
+    public float MusicSoundValue
+    {
+        get => musicSoundValue;
+        set => musicSoundValue = value;
+    }
+
+    public float SoundEffectValue
+    {
+        get => soundEffectValue;
+        set => soundEffectValue = value;
+    }
+
     public bool IsPlayer1Selected
     {
         get => isPlayer1Selected;
